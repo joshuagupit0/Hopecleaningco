@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cleaning Service</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Style\style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="#home"><img src="images\HCClogo.png" alt=""></a>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#services">Services</a>
+    <a href="#packages">Package</a>
+    <a href="#booking" class="btn">Book Now</a>
+  </nav>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1>Your trusted <br>partner <br>for spotless,<br> stress‑free<br> living</h1>
+    <a href="#booking" class="btn">Book now</a>
+  </div>
+  <div class="hero-image"></div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section id="about" class="about">
+  <div class="two-col">
+    <img src="images\About.png" alt="about" class="about-image">
+    <div>
+      <h2>About Us</h2>
+      <p>At Hope Cleaning Co, we bring hope to every home through reliable, high-quality cleaning services tailored to your needs. We believe in open communication and personalised service, ensuring every client receives the best possible clean. <br><br>With years of industry experience and strong knowledge of real estate standards, we specialise in regular, deep, and end-of-lease cleans—backed by our 7-day satisfaction guarantee to help you secure your bond with confidence.<br><br>We proudly use eco-friendly products that are safe for your family and the environment. As a family-owned business, we value lasting relationships, support local businesses, invest in our team, and give back by donating a portion of our profits to Ronald McDonald House.
+<br><br>
+At Hope Cleaning Co, we don’t just clean we care.
+</p>
+      <!--<a class="btn">Learn more</a>-->
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services">
+  <h1>Our Services</h1><br>
+  <div class="serv-con">
+    <div class="card">
+      <h3>Deep Cleaning</h3>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+      <img src="images\service1.png" alt="Deep Cleaning"><br>
+      <a class="btn">Learn more</a>
+    </div>
+    <div class="card">
+      <h3>Spring Cleaning</h3>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+      <img src="images\service2.png" alt="Spring Cleaning"><br>
+      <a class="btn">Learn more</a>
+    </div>
+    <div class="card">
+      <h3>Move‑In Cleaning</h3>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+      <img src="images\service3.png" alt="Move-In Cleaning"><br>
+      <a class="btn">Learn more</a>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section id="packages">
+  <h2>Packages</h2><br>
+  <div class="packages">
+    <div class="card">
+      <h3>Basic Deepclean</h3>
+      <p>Essential cleaning for everyday upkeep</p>
+      <div class="price">$120.00</div>
+    </div>
+    <div class="card">
+      <h3>Full Home Deepclean</h3>
+      <p>Complete home refresh</p>
+      <div class="price">$180.00</div>
+    </div>
+    <div class="card">
+      <h3>Premium Deepclean</h3>
+      <p>Top‑to‑bottom transformation</p>
+      <div class="price">$250.00</div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <h2>Client Reviews</h2>
+  <div class="review-slider">
+    <div class="review-track" id="review-track"></div>
+    <button class="nav-btn left" onclick="prevSlide()">&#10094;</button>
+    <button class="nav-btn right" onclick="nextSlide()">&#10095;</button>
+  </div>
+
+
+  <div id="popup">
+    <h3>Review Submitted!</h3>
+    <p id="popupMessage"></p>
+    <button onclick="closePopup()">OK</button>
+  </div>
+  <h2>Submit Your Review</h2>
+  <form id="reviewForm">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <select id="rating" required>
+      <option value="">Select Rating</option>
+      <option value="1">★☆☆☆☆ (1)</option>
+      <option value="2">★★☆☆☆ (2)</option>
+      <option value="3">★★★☆☆ (3)</option>
+      <option value="4">★★★★☆ (4)</option>
+      <option value="5">★★★★★ (5)</option>
+    </select>
+    <textarea id="comment" placeholder="Your Comment" rows="4" required></textarea>
+    <button type="submit">Submit Review</button>
+  </form>
+</section>
+
+
+<!-- BOOKING FORM -->
+<section class="booking" id="booking">
+  <div class="booking-image"></div>
+  <form id="bookingForm">
+    <h2>Book now!</h2><br>
+    <input type="text" id="name" placeholder="Your name*" required>
+    <input type="text" id="address" placeholder="Complete address*" required>
+    <input type="tel" id="phone" placeholder="Phone number*" required>
+    <select id="service">
+      <option value="">Preferred service</option>
+      <option>Deep cleaning</option>
+      <option>Spring cleaning</option>
+    </select>
+    <input type="text" id="package" placeholder="Package">
+    <textarea id="notes" placeholder="Notes or requests"></textarea>
+    <button class="btn" type="submit">Submit</button>
+    <p id="bookingResult" style="margin-top:15px;font-weight:500;"></p>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <h3>Hope Cleaning Co.</h3>
+    <p>Let's start a conversation</p>
+  </div>
+  <div>
+    <h4>Phone</h4>
+    <p>0123‑456‑7890</p>
+  </div>
+  <div>
+    <h4>Email</h4>
+    <p>hello@email.com</p>
+  </div>
+</footer>
+
+<script src="js\ClientReviews.js"></script>
+</body>
+</html>
