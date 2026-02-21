@@ -2,7 +2,7 @@ const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzqhwf-o07kjlhQRVRe
     const track = document.getElementById("review-track");
     let clients = [];
     let index = 0;
-    const cardsPerSlide = 3;
+    const cardsPerSlide = 1;
     const cardWidth = 400;
 
     // 10 random colors for avatars
@@ -13,19 +13,53 @@ const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzqhwf-o07kjlhQRVRe
     function addCard(client, i) {
       const card = document.createElement("div");
       card.className = "review-card";
-
+      // Limit comment length to 500 characters
+    
       const avatar = document.createElement("div");
       avatar.className = "avatar";
       avatar.style.backgroundColor = colors[i % colors.length];
       avatar.textContent = client.name.charAt(0).toUpperCase();
+      const limit = 300;
+     let commentHTML = "";
+     if (client.comment.length > limit) {
+     const visibleText = client.comment.substring(0, limit);
+      const hiddenText = client.comment.substring(limit);
 
+      commentHTML = `
+        <p class="comment">"
+          ${visibleText}<span class="more-text" style="display:none;">${hiddenText}"</span>
+        </p>
+        <span class="view-more-btn review-btn"">
+          See More
+        </span>
+      `;
+    } else {
+      commentHTML = `<p class="comment">"${client.comment}"</p>`;
+    }
+
+      
       card.appendChild(avatar);
       card.innerHTML += `
         <h3>${client.name}</h3>
         <div class="stars">${"★".repeat(client.rating)}${"☆".repeat(5-client.rating)}</div>
-        <p class="comment">${client.comment}</p>
+        ${commentHTML}
       `;
       track.appendChild(card);
+
+      // Attach toggle functionality if "View More" exists
+    const viewMoreBtn = card.querySelector(".view-more-btn");
+    if (viewMoreBtn) {
+      viewMoreBtn.addEventListener("click", () => {
+        const moreText = card.querySelector(".more-text");
+        if (moreText.style.display === "none") {
+          moreText.style.display = "inline";
+          viewMoreBtn.textContent = "Back";
+        } else {
+          moreText.style.display = "none";
+          viewMoreBtn.textContent = "See More";
+        }
+      });
+    }
     }
 
     // Slider navigation
@@ -46,7 +80,7 @@ const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzqhwf-o07kjlhQRVRe
 
     // Fetch reviews from spreadsheet
     function loadReviews() {
-      fetch('https://script.google.com/macros/s/AKfycbzqhwf-o07kjlhQRVReFqGB_JKWqyGUmsZxxPe3j3YG_Ariq72jvWnraufIrqdJrqOmNQ/exec')
+      fetch(WEB_APP_URL)
         .then(res => res.json())
         .then(data => {
           clients = data;
@@ -55,6 +89,7 @@ const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzqhwf-o07kjlhQRVRe
           updateSlider();
         });
     }
+    
 
     // Submit review
     document.getElementById("reviewForm").addEventListener("submit", function(e) {
@@ -65,7 +100,7 @@ const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzqhwf-o07kjlhQRVRe
 
       const newClient = {name, rating, comment};
 
-      fetch('https://script.google.com/macros/s/AKfycbzqhwf-o07kjlhQRVReFqGB_JKWqyGUmsZxxPe3j3YG_Ariq72jvWnraufIrqdJrqOmNQ/exec', {
+      fetch(WEB_APP_URL, {
         method: "POST",
         body: JSON.stringify(newClient)
       })

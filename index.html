@@ -5,14 +5,101 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cleaning Service</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
   <link rel="stylesheet" href="Style\style.css">
+<style>
+    /* ===== LOADING SCREEN ===== */
+#loader {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.loader-container {
+  text-align: center;
+}
+
+.loader-container img {
+  width: 240px;
+  margin-bottom: 25px;
+}
+
+/* ===== BUFFER BAR ===== */
+.buffer-bar {
+  width: 250px;
+  height: 6px;
+  background: #e0e0e0;
+  border-radius: 50px;
+  overflow: hidden;
+  margin: auto;
+}
+
+.buffer-progress {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #0f8a8a, #22b573);
+  animation: loading 6.9s ease-in-out infinite;
+}
+
+/* Buffer Animation */
+@keyframes loading {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 80%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+
+/* Hide Loader */
+#loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+  </style>
 </head>
+
+<!-- Loading Screen -->
+<div id="loader">
+  <div class="loader-container">
+    <img src="images\HCClogo.png" alt="Hope Cleaning Co Logo">
+    
+    <div class="buffer-bar">
+      <div class="buffer-progress"></div>
+    </div>
+  </div>
+</div>
 <body>
 
 <!-- HEADER -->
 <header>
   <a href="#home"><img src="images\HCClogo.png" alt=""></a>
-  <nav>
+  <div class="contact-top">
+    <div>
+      <span class="material-symbols-outlined icon-style">call</span>
+      <p>+04 2650-9090</p>
+    </div>
+    <div>
+      <span class="material-symbols-outlined icon-style">mail</span>
+      <p>hopecleaningco88@gmail.com</p>
+    </div>
+  </div>
+
+  <!-- Hamburger Menu Button -->
+  <button class="menu-toggle" id="menu-toggle">
+    <span class="material-symbols-outlined">menu</span>
+  </button>
+
+  <nav id="nav">
     <a href="#home">Home</a>
     <a href="#about">About Us</a>
     <a href="#services">Services</a>
@@ -24,7 +111,8 @@
 <!-- HERO SECTION -->
 <section class="hero" id="home">
   <div class="hero-content">
-    <h1>Your trusted <br>partner <br>for spotless,<br> stress‑free<br> living</h1>
+    <h1>Professional Cleaning You Can Trust</h1>
+    <p>Hope Cleaning Co provides reliable residential and commercial cleaning services across Ballarat and surrounds, Australia. We deliver spotless results with care and attention to detail.</p>
     <a href="#booking" class="btn">Book now</a>
   </div>
   <div class="hero-image"></div>
@@ -36,63 +124,100 @@
     <img src="images\About.png" alt="about" class="about-image">
     <div>
       <h2>About Us</h2>
-      <p>At Hope Cleaning Co, we bring hope to every home through reliable, high-quality cleaning services tailored to your needs. We believe in open communication and personalised service, ensuring every client receives the best possible clean. <br><br>With years of industry experience and strong knowledge of real estate standards, we specialise in regular, deep, and end-of-lease cleans—backed by our 7-day satisfaction guarantee to help you secure your bond with confidence.<br><br>We proudly use eco-friendly products that are safe for your family and the environment. As a family-owned business, we value lasting relationships, support local businesses, invest in our team, and give back by donating a portion of our profits to Ronald McDonald House.
-<br><br>
-At Hope Cleaning Co, we don’t just clean we care.
+      <h1>Welcome to Hope Cleaning Co</h1>
+      <p>Hope Cleaning Co is a locally owned and operated cleaning business committed to providing high-quality, reliable, and affordable cleaning services.
+
+With over years of experience, we understand how important a clean home or workspace is for your comfort, health, and peace of mind. Our trained and trustworthy team takes pride in delivering detailed cleaning with a personal touch.
+We treat every home like our own — with respect, care, and professionalism.
 </p>
       <!--<a class="btn">Learn more</a>-->
     </div>
   </div>
+
 </section>
+
 
 <!-- SERVICES -->
 <section id="services" class="services">
   <h1>Our Services</h1><br>
   <div class="serv-con">
     <div class="card">
-      <h3>Deep Cleaning</h3>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-      <img src="images\service1.png" alt="Deep Cleaning"><br>
-      <a class="btn">Learn more</a>
+      <img src="images\service1.png" alt="Deep Cleaning">
+      <h3>End of Lease Cleaning</h3>
+      <p>Complete deep cleaning to help secure your bond return.</p>
+      
+      <!--<a class="btn">Learn more</a>-->
     </div>
     <div class="card">
-      <h3>Spring Cleaning</h3>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-      <img src="images\service2.png" alt="Spring Cleaning"><br>
-      <a class="btn">Learn more</a>
+      <img src="images\service2.png" alt="Spring Cleaning">
+      <h3>Window Cleaning</h3>
+      <p>Interior window cleaning for a crystal-clear finish.</p>
+      
+      
     </div>
     <div class="card">
-      <h3>Move‑In Cleaning</h3>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-      <img src="images\service3.png" alt="Move-In Cleaning"><br>
-      <a class="btn">Learn more</a>
+      <img src="images\service3.png" alt="Move-In Cleaning">
+      <h3>Office Cleaning</h3>
+      <p>Reliable office and commercial space cleaning.</p>
+    </div>
+    <div class="card">
+      <img src="images\service4.png" alt="Deep Cleaning">
+      <h3>Carpet Cleaning</h3>
+      <p>Professional carpet refresh and stain treatment.</p>
+      
+      <!--<a class="btn">Learn more</a>-->
+    </div>
+    <div class="card">
+      <img src="images\service5.png" alt="Spring Cleaning">
+      <h3>Oven Cleaning</h3>
+      <p>Deep oven cleaning to remove grease and buildup.</p>
+      
+      
+    </div>
+    <div class="card">
+      <img src="images\service6.png" alt="Move-In Cleaning">
+      <h3>Airbnb Cleaning</h3>
+      <p>Fast turnaround cleaning for short-term rental properties.</p>
+    </div>
+  </div>
+  <a class="text-btn">View All Service Here >>></a>
+</section>
+
+<!-- Why Choose Us?-->
+<section id="choose" class="choose">
+  <div class="choose-cont">
+    <h2>Why Choosing Us?</h2>
+    <div class="five-col">
+      <div><span class="material-symbols-outlined">assured_workload</span><p>Fully Insured</p></div>
+      <div><span class="material-symbols-outlined">eye_tracking</span><p>Police-checked<br>Cleaners</p></div>
+      <div><span class="material-symbols-outlined">history</span><p>Flexible<br>Scheduling</p></div>
+      <div><span class="material-symbols-outlined">price_check</span><p>Affordable<br>Pricing</p></div>
+      <div><span class="material-symbols-outlined">workspace_premium</span><p>100% Satisfaction<br>Guarantee</p></div>
     </div>
   </div>
 </section>
 
 <!-- PACKAGES -->
-<section id="packages">
-  <h2>Packages</h2><br>
+<section id="packages" class="package">
   <div class="packages">
-    <div class="card">
-      <h3>Basic Deepclean</h3>
-      <p>Essential cleaning for everyday upkeep</p>
-      <div class="price">$120.00</div>
+    <div class="card-pack top">
+      <img class="img-top" src="images/package1.png" alt="">
     </div>
-    <div class="card">
-      <h3>Full Home Deepclean</h3>
-      <p>Complete home refresh</p>
-      <div class="price">$180.00</div>
+    <div class="card-pack pack-cent">
+      <div>
+        <h2>Flexible packages for every need</h2>
+        <p>We’ve made keeping your home fresh and organized easier than ever. Explore our cleaning packages designed to fit your schedule, your needs, and your lifestyle.</p>
+        <a class="btn">View Our Package</a>
+      </div>
     </div>
-    <div class="card">
-      <h3>Premium Deepclean</h3>
-      <p>Top‑to‑bottom transformation</p>
-      <div class="price">$250.00</div>
+    <div class="card-pack bottom">
+      <img class="img-bottom" src="images/package2.png" alt="">
     </div>
   </div>
 </section>
 
-<section id="reviews">
+<!-- Client Review -->
+<section id="reviews" class="review">
   <h2>Client Reviews</h2>
   <div class="review-slider">
     <div class="review-track" id="review-track"></div>
@@ -106,42 +231,51 @@ At Hope Cleaning Co, we don’t just clean we care.
     <p id="popupMessage"></p>
     <button onclick="closePopup()">OK</button>
   </div>
-  <h2>Submit Your Review</h2>
-  <form id="reviewForm">
+
+ 
+  <div class="form-cont">
+    <img src="images/review.png">
+  <form id="reviewForm" >
+     <h2>Submit Your Review</h2>
     <input type="text" id="name" placeholder="Your Name" required>
     <select id="rating" required>
-      <option value="">Select Rating</option>
-      <option value="1">★☆☆☆☆ (1)</option>
-      <option value="2">★★☆☆☆ (2)</option>
-      <option value="3">★★★☆☆ (3)</option>
-      <option value="4">★★★★☆ (4)</option>
-      <option value="5">★★★★★ (5)</option>
+      <option value="" class="star-color"><span>Rating</span></option>
+      <option value="1" class="star-color">★☆☆☆☆ (1)</option>
+      <option value="2" class="star-color">★★☆☆☆ (2)</option>
+      <option value="3" class="star-color">★★★☆☆ (3)</option>
+      <option value="4" class="star-color">★★★★☆ (4)</option>
+      <option value="5" class="star-color">★★★★★ (5)</option>
     </select>
     <textarea id="comment" placeholder="Your Comment" rows="4" required></textarea>
-    <button type="submit">Submit Review</button>
+    <button class="btn" type="submit">Submit Review</button>
   </form>
+  </div>
 </section>
 
+<section id="gallery" class="gallery">
+  <div class="gallery-wrapper">
+    <h2>Gallery</h2>
+    <h1>“Real results from real clients.”</h1>
+  <div class="gallery-track">
+    <!-- Duplicate images for smooth infinite scroll -->
+    <img src="images/gallery/gallery1.jpeg">
+    <img src="images/gallery/gallery2.jpeg">
+    <img src="images/gallery/gallery3.jpeg">
+    <img src="images/gallery/gallery4.jpeg">
+    <img src="images/gallery/gallery5.jpeg">
+    <img src="images/gallery/gallery6.jpeg">
+    <img src="images/gallery/gallery7.jpeg">
+    <img src="images/gallery/gallery8.jpeg">
+  </div>
+</div>
 
-<!-- BOOKING FORM -->
-<section class="booking" id="booking">
-  <div class="booking-image"></div>
-  <form id="bookingForm">
-    <h2>Book now!</h2><br>
-    <input type="text" id="name" placeholder="Your name*" required>
-    <input type="text" id="address" placeholder="Complete address*" required>
-    <input type="tel" id="phone" placeholder="Phone number*" required>
-    <select id="service">
-      <option value="">Preferred service</option>
-      <option>Deep cleaning</option>
-      <option>Spring cleaning</option>
-    </select>
-    <input type="text" id="package" placeholder="Package">
-    <textarea id="notes" placeholder="Notes or requests"></textarea>
-    <button class="btn" type="submit">Submit</button>
-    <p id="bookingResult" style="margin-top:15px;font-weight:500;"></p>
-  </form>
+<!-- Fullscreen -->
+<div class="fullscreen" id="fullscreen">
+  <span class="close-btn" id="closeBtn">&times;</span>
+  <img id="fullImg">
+</div>
 </section>
+
 
 <!-- FOOTER -->
 <footer>
@@ -158,7 +292,37 @@ At Hope Cleaning Co, we don’t just clean we care.
     <p>hello@email.com</p>
   </div>
 </footer>
-
-<script src="js\ClientReviews.js"></script>
 </body>
+<script>
+  //Menubar
+document.getElementById("menu-toggle").addEventListener("click", function () {
+  document.getElementById("nav").classList.toggle("show");
+});
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) entry.target.classList.add('show');
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('section, .card, .two-col').forEach(el => {
+  el.classList.add('fade-in'); 
+  observer.observe(el);
+});
+</script>
+<script src="js\ClientReviews.js"></script>
+<script src="js\gallery.js"></script>
+<script src="js\script.js"></script>
+
+<script>
+  window.addEventListener("load", function () {
+    const loader = document.getElementById("loader");
+
+    // Delay slightly for smooth feel
+    setTimeout(() => {
+      loader.classList.add("hidden");
+    }, 3200);
+  });
+</script>
+
 </html>

@@ -88,3 +88,8 @@ document.querySelectorAll('section, .card, .two-col').forEach(el => {
 
 // Load reviews initially
 loadReviews();
+
+//Menubar
+document.getElementById("menu-toggle").addEventListener("click", function () {
+  document.getElementById("nav").classList.toggle("show");
+});
