@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
   <link rel="stylesheet" href="Style\style.css">
   <link rel="stylesheet" href="Style\responsive.css">
+ <script src="https://kit.fontawesome.com/44cc7eda07.js" crossorigin="anonymous"></script>
 <style>
     /* ===== LOADING SCREEN ===== */
 #loader {
@@ -67,6 +68,7 @@
   visibility: hidden;
 }
   </style>
+
 </head>
 
 
@@ -80,6 +82,7 @@
     </div>
   </div>
 </div>
+
 <body>
 
 <!-- HEADER -->
@@ -95,12 +98,12 @@
     <a href="#about">About Us</a>
     <a href="#services">Services</a>
     <a href="#packages">Package</a>
-    <a href="#booking" class="btn">Book Now</a>
+    <a class="btn" id="bookBtn">Book Now</a>
 
     <div class="contact-top">
     <div>
       <span class="material-symbols-outlined icon-style">call</span>
-      <p>+04 2650-9090</p>
+      <p>+61 426-509-090</p>
     </div>
     <div>
       <span class="material-symbols-outlined icon-style">mail</span>
@@ -280,16 +283,61 @@ We treat every home like our own — with respect, care, and professionalism.
 <!-- FOOTER -->
 <footer>
   <div>
+    <a href="#home"><img src="images\HCClogo.png" alt=""></a>
     <h3>Hope Cleaning Co.</h3>
     <p>Let's start a conversation</p>
   </div>
-  <div>
-    <h4>Phone</h4>
-    <p>0123‑456‑7890</p>
+  <div class="contact-bottom">
+    <div>
+      <span class="material-symbols-outlined icon-style">call</span>
+      <p> +61 426-509-090</p>
+    </div>
+    <div>
+      <span class="material-symbols-outlined icon-style">mail</span>
+      <p> hopecleaningco88@gmail.com</p>
+    </div>
+    <div>
+      <span class="material-symbols-outlined">location_on</span>
+      <p> Ballarat, Victoria Australia</p>
+    </div>
   </div>
   <div>
-    <h4>Email</h4>
-    <p>hello@email.com</p>
+    <h4>Follow us on.</h4><br>
+    <p>
+      <a href="https://www.facebook.com/profile.php?id=61562716752062"><i class="fa-brands fa-facebook"></i>
+      </a><a><i class="fa-brands fa-facebook-messenger"></i></a>
+    </p><br>
+    <p>© 2026 Hope Cleaning Co. All Rights Reserved.</p>
+  </div>
+   <!-- Popup -->
+  <div class="popup-overlay" id="popupOverlay">
+    <div class="popup-box">
+      <h2>Terms & Conditions</h2>
+      <p><strong>By booking with Hope Cleaning Co, you agree to the following:</strong></p>
+      <p><b>1. Booking Confirmation</b><br>
+        All bookings are subject to availability. We will contact you within 24 hours to confirm your appointment.</p>
+      <p><b>2. Access to Property</b><br>
+        Clients must provide safe and clear access to the property at the scheduled time. Hot water and power must be available during the cleaning. If we cannot access the property, a cancellation fee may apply.</p>
+      <p><b>3. Payment Terms</b><br>
+        Payment is due on the day of service unless otherwise agreed. For End of Lease or One-Off Jobs, half payment is required upfront and the remaining half upon completion. If the client does not request a re-clean, or is not satisfied but does not want the re-clean, the second half payment is still required.</p>
+      <p><b>4. Cancellations</b><br>
+        At least 24 hours’ notice is required for cancellations or rescheduling. Late cancellations may incur a fee.</p>
+      <p><b>5. Satisfaction Guarantee</b><br>
+        We offer a 7-day satisfaction guarantee. If you are not satisfied, we will return and re-clean at no extra charge if requested within 7 days.</p>
+      <p><b>6. Safety & Liability</b><br>
+        We are fully insured. Pre-existing damage or wear and tear is not covered.</p>
+
+      <h2>Privacy Policy</h2>
+      <p>Hope Cleaning Co respects your privacy.<br>
+        • We collect personal information only for booking and communication purposes.<br>
+        • We do not share your information with third parties.<br>
+        • Your details are stored securely.</p>
+
+      <div class="popup-buttons">
+        <button class="decline-btn" id="declineBtn">Decline</button>
+        <button class="accept-btn" id="acceptBtn">Accept</button>
+      </div>
+    </div>
   </div>
 </footer>
 </body>
@@ -315,6 +363,7 @@ document.querySelectorAll('section, .card, .two-col').forEach(el => {
 <script src="js\ClientReviews.js"></script>
 <script src="js\gallery.js"></script>
 <script src="js\script.js"></script>
+<script src="js\terms.js"></script>
 
 <script>
   window.addEventListener("load", function () {
@@ -328,5 +377,3 @@ document.querySelectorAll('section, .card, .two-col').forEach(el => {
 </script>
 
 </html>
-
-

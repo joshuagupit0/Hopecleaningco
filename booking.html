@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cleaning Service</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" href="Style\style.css">
+  <link rel="stylesheet" href="Style\responsive.css">
+ <script src="https://kit.fontawesome.com/44cc7eda07.js" crossorigin="anonymous"></script>
+<style>
+    /* ===== LOADING SCREEN ===== */
+#loader {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.loader-container {
+  text-align: center;
+}
+
+.loader-container img {
+  width: 240px;
+  margin-bottom: 25px;
+}
+
+/* ===== BUFFER BAR ===== */
+.buffer-bar {
+  width: 250px;
+  height: 6px;
+  background: #e0e0e0;
+  border-radius: 50px;
+  overflow: hidden;
+  margin: auto;
+}
+
+.buffer-progress {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #0f8a8a, #22b573);
+  animation: loading 6.9s ease-in-out infinite;
+}
+
+/* Buffer Animation */
+@keyframes loading {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 80%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+
+/* Hide Loader */
+#loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+.booking {
+    position: relative;
+}
+.booking .two-colum {   
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px,1fr));
+  gap: 0;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+  min-height: 700px;
+  padding: 100px 100px;
+}
+.booking .two-colum img, .about .two-colum .form-wrapper{
+  display: inline-flex;
+  width: 100%;
+  height: 100%;
+}
+.booking .two-colum .form-wrapper {
+      background: #ffffff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 10px 10px;
+    }
+ .form-wrapper iframe {
+    display: flex;
+      border: none;
+      width: 100%;
+      height: 700px;
+      border-radius: 8px;
+    }
+    @media(max-width: 540px){
+        /*--------Booking----------*/
+        .booking .two-colum {   
+        grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+        padding: 100px 10px;
+        }
+    }
+  </style>
+
+</head>
+
+
+ <!--Loading Screen-->
+<div id="loader">
+  <div class="loader-container">
+    <img src="images\HCClogo.png" alt="Hope Cleaning Co Logo">
+    
+    <div class="buffer-bar">
+      <div class="buffer-progress"></div>
+    </div>
+  </div>
+</div> 
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="index.html"><img src="images\HCClogo.png" alt=""></a>
+  <!-- Hamburger Menu Button -->
+  <button class="menu-toggle" id="menu-toggle">
+    <span class="material-symbols-outlined">menu</span>
+  </button>
+
+  <nav id="nav">
+    <a href="index.html">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#services">Services</a>
+    <a href="#packages">Package</a>
+    <a class="btn" id="bookBtn">Book Now</a>
+
+    <div class="contact-top">
+    <div>
+      <span class="material-symbols-outlined icon-style">call</span>
+      <p>+61 426-509-090</p>
+    </div>
+    <div>
+      <span class="material-symbols-outlined icon-style">mail</span>
+      <p>hopecleaningco88@gmail.com</p>
+    </div>
+  </div>
+
+  </nav>
+</header>
+
+<!--------------Booking--------------->
+<section id="booking" class="booking">
+    <div class="two-colum">
+    <img src="images\service1.png" alt="Deep Cleaning">
+    <div class="form-wrapper">
+    <!-- Replace FORM_ID with your actual Google Form embed link -->
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdUw5u3eH7fwsmXDwqYzMGLDwAudpKNny6QPB2tF7SA3DG5Mw/viewform?embedded=true" width="" height="" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+  </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <a href="#home"><img src="images\HCClogo.png" alt=""></a>
+    <h3>Hope Cleaning Co.</h3>
+    <p>Let's start a conversation</p>
+  </div>
+  <div class="contact-bottom">
+    <div>
+      <span class="material-symbols-outlined icon-style">call</span>
+      <p> +61 426-509-090</p>
+    </div>
+    <div>
+      <span class="material-symbols-outlined icon-style">mail</span>
+      <p> hopecleaningco88@gmail.com</p>
+    </div>
+    <div>
+      <span class="material-symbols-outlined">location_on</span>
+      <p> Ballarat, Victoria Australia</p>
+    </div>
+  </div>
+  <div>
+    <h4>Follow us on.</h4><br>
+    <p>
+      <a href="https://www.facebook.com/profile.php?id=61562716752062"><i class="fa-brands fa-facebook"></i>
+      </a><a><i class="fa-brands fa-facebook-messenger"></i></a>
+    </p><br>
+    <p>© 2026 Hope Cleaning Co. All Rights Reserved.</p>
+  </div>
+   <!-- Popup -->
+  <div class="popup-overlay" id="popupOverlay">
+    <div class="popup-box">
+      <h2>Terms & Conditions</h2>
+      <p><strong>By booking with Hope Cleaning Co, you agree to the following:</strong></p>
+      <p><b>1. Booking Confirmation</b><br>
+        All bookings are subject to availability. We will contact you within 24 hours to confirm your appointment.</p>
+      <p><b>2. Access to Property</b><br>
+        Clients must provide safe and clear access to the property at the scheduled time. Hot water and power must be available during the cleaning. If we cannot access the property, a cancellation fee may apply.</p>
+      <p><b>3. Payment Terms</b><br>
+        Payment is due on the day of service unless otherwise agreed. For End of Lease or One-Off Jobs, half payment is required upfront and the remaining half upon completion. If the client does not request a re-clean, or is not satisfied but does not want the re-clean, the second half payment is still required.</p>
+      <p><b>4. Cancellations</b><br>
+        At least 24 hours’ notice is required for cancellations or rescheduling. Late cancellations may incur a fee.</p>
+      <p><b>5. Satisfaction Guarantee</b><br>
+        We offer a 7-day satisfaction guarantee. If you are not satisfied, we will return and re-clean at no extra charge if requested within 7 days.</p>
+      <p><b>6. Safety & Liability</b><br>
+        We are fully insured. Pre-existing damage or wear and tear is not covered.</p>
+
+      <h2>Privacy Policy</h2>
+      <p>Hope Cleaning Co respects your privacy.<br>
+        • We collect personal information only for booking and communication purposes.<br>
+        • We do not share your information with third parties.<br>
+        • Your details are stored securely.</p>
+
+      <div class="popup-buttons">
+        <button class="decline-btn" id="declineBtn">Decline</button>
+        <button class="accept-btn" id="acceptBtn">Accept</button>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+
+<script>
+  //Menubar
+document.getElementById("menu-toggle").addEventListener("click", function () {
+  document.getElementById("nav").classList.toggle("show");
+});
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) entry.target.classList.add('show');
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('section, .card, .two-col').forEach(el => {
+  el.classList.add('fade-in'); 
+  observer.observe(el);
+});
+</script>
+
+<script src="js\script.js"></script>
+<script src="js\terms.js"></script>
+
+<script>
+  window.addEventListener("load", function () {
+    const loader = document.getElementById("loader");
+
+    // Delay slightly for smooth feel
+    setTimeout(() => {
+      loader.classList.add("hidden");
+    }, 3200);
+  });
+</script>
+
+</html>

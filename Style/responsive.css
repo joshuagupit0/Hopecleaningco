@@ -153,8 +153,11 @@
 /*--------Services----------*/
  .serv-con { 
   grid-template-columns: repeat(auto-fit, minmax(80%,1fr)); 
-}  
+} 
 }
+
+
+
 @media(max-width: 414px){
   /*------------Hero----------------*/
     .hero{
