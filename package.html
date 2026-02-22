@@ -67,40 +67,78 @@
   opacity: 0;
   visibility: hidden;
 }
-.booking {
-    position: relative;
-}
-.booking .two-colum {   
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px,1fr));
-  gap: 0;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
-  min-height: 700px;
-  padding: 100px 100px;
-}
-.booking .two-colum img, .about .two-colum .form-wrapper{
-  display: inline-flex;
-  width: 100%;
-  height: 100%;
-}
-.booking .two-colum .form-wrapper {
-      background: #ffffff;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      padding: 10px 10px;
+
+/*-----------package-------------*/
+  .header {
+      background: linear-gradient(135deg, #0F6E75, #0f8a8a);
+      color: #fff;
+      padding: 20px;
+      text-align: center;
     }
- .form-wrapper iframe {
-    display: flex;
-      border: none;
-      width: 100%;
-      height: 700px;
-      border-radius: 8px;
+
+    .header h1 {
+      margin: 0;
+      font-size: 2rem;
     }
-    @media(max-width: 540px){
-        /*--------Booking----------*/
-        .booking .two-colum {   
-        grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-        padding: 100px 10px;
-        }
+
+    .pricing-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      padding: 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .card h2 {
+      background: #0F6E75;
+      color: #fff;
+      margin: 0;
+      padding: 15px;
+      font-size: 1.3rem;
+    }
+
+    .card ul {
+      list-style: none;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .card ul li {
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .card ul li:last-child {
+      border-bottom: none;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #0F6E75;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+      .card h2 {
+        font-size: 1.1rem;
+      }
     }
   </style>
 
@@ -131,7 +169,7 @@
   <nav id="nav">
     <a href="index.html">Home</a>
     <a href="index.html#about">About Us</a>
-    <a href="service.html">Services</a>
+    <a href="#services">Services</a>
     <a href="package.html">Package</a>
     <a class="btn" id="bookBtn">Book Now</a>
 
@@ -149,16 +187,77 @@
   </nav>
 </header>
 
-<!--------------Booking--------------->
-<section id="booking" class="booking">
-    <div class="two-colum">
-    <img src="images\service1.png" alt="Deep Cleaning">
-    <div class="form-wrapper">
-    <!-- Replace FORM_ID with your actual Google Form embed link -->
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdUw5u3eH7fwsmXDwqYzMGLDwAudpKNny6QPB2tF7SA3DG5Mw/viewform?embedded=true" width="" height="" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+<!------------------Package------------->
+
+  <div class="header">
+    <h1>Cleaning Services Pricing</h1>
+    <p>Transparent rates for professional cleaning</p>
   </div>
+
+  <div class="pricing-container">
+
+    <!-- Regular Clean -->
+    <div class="card">
+      <h2>Regular Clean</h2>
+      <ul>
+        <li>1–2 Bedrooms: Weekly <span class="highlight">$125</span> | Fortnightly <span class="highlight">$130</span></li>
+        <li>3 Bedrooms: Weekly <span class="highlight">$145</span> | Fortnightly <span class="highlight">$155</span></li>
+        <li>4 Bedrooms, 2 Bathrooms: Weekly <span class="highlight">$165</span> | Fortnightly <span class="highlight">$175</span></li>
+        <li>5 Bedrooms, 2 Bathrooms: Weekly <span class="highlight">$220</span> | Fortnightly <span class="highlight">$225</span></li>
+        <li>Extra Bathroom: <span class="highlight">$35</span></li>
+        <li>Extra Powder Room: <span class="highlight">$15</span></li>
+      </ul>
+    </div>
+
+    <!-- End of Lease Cleaning -->
+    <div class="card">
+      <h2>End of Lease Cleaning</h2>
+      <ul>
+        <li>1–2 Bedrooms, 1 Bathroom: <span class="highlight">$590</span></li>
+        <li>3 Bedrooms, 1 Bathroom: <span class="highlight">$670</span></li>
+        <li>4 Bedrooms, 2 Bathrooms: <span class="highlight">$710</span></li>
+        <li>5 Bedrooms, 2 Bathrooms: <span class="highlight">$820</span></li>
+      </ul>
+    </div>
+
+    <!-- Carpet Cleaning -->
+    <div class="card">
+      <h2>Carpet Cleaning</h2>
+      <ul>
+        <li>1–2 Bedrooms: <span class="highlight">$120</span></li>
+        <li>3 Bedrooms: <span class="highlight">$135</span></li>
+        <li>4 Bedrooms: <span class="highlight">$150</span></li>
+        <li>5 Bedrooms: <span class="highlight">$185</span></li>
+        <li>Flea Treatment: <span class="highlight">$35</span></li>
+      </ul>
+    </div>
+
+    <!-- Oven Cleaning -->
+    <div class="card">
+      <h2>Oven Cleaning</h2>
+      <ul>
+        <li>600mm Oven: <span class="highlight">$160</span></li>
+        <li>900mm Oven: <span class="highlight">$185</span></li>
+        <li>Double Oven: <span class="highlight">$250</span></li>
+      </ul>
+    </div>
+
+    <!-- Window Cleaning -->
+    <div class="card">
+      <h2>Window Cleaning</h2>
+      <ul>
+        <li>1–2 Bedrooms: <span class="highlight">$150</span></li>
+        <li>3 Bedrooms: <span class="highlight">$220</span></li>
+        <li>4 Bedrooms: <span class="highlight">$260</span></li>
+        <li>5 Bedrooms: <span class="highlight">$330</span></li>
+        <li>Windowsills: <span class="highlight">$45</span></li>
+        <li>Window Tracks: <span class="highlight">$80</span></li>
+        <li><em>Custom quote available</em></li>
+      </ul>
+    </div>
+
   </div>
-</section>
 
 
 <!-- FOOTER -->
