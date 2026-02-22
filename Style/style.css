@@ -19,6 +19,7 @@ button {
 
 /* ---------------- Header ---------------- */
 nav {
+  position: relative;
   display: flex;
   gap: 20px;
 }
@@ -48,21 +49,24 @@ header a img{
   height: 100px;
 }
 header nav a { margin-left: 24px; font-weight: 500; }
-header .contact-top{
-  position: absolute;
-  top: 0;
-  right: 0;
+header nav{
+  align-items: center;
 }
-header .contact-top div{
+
+header nav .contact-top{
+  position: absolute;
+  top: -50px;
+}
+header nav .contact-top div{
   display: inline-flex;
   padding: 10px 20px;
   align-items: center;
   color: #0f6e75;
 }
-header .contact-top div:hover{
+header nav .contact-top div:hover{
   color: #19A7AE;
 }
-header .contact-top div p{
+header nav .contact-top div p{
   text-decoration: underline;
 }
 
@@ -82,7 +86,7 @@ color: #fff;}
   position: relative;
   display: grid; 
   grid-template-columns: 2fr 2fr;
-  height: 90vh; 
+  min-height: 90vh; 
   padding: 60px; 
   background: url('../images/Home.png') center/cover no-repeat;
   align-items: center;
@@ -104,7 +108,7 @@ color: #fff;}
 
 .hero .hero-content {
   color: #0f6e75;
-  min-width: 600px; 
+  min-width: 300px; 
   padding: 30px; 
   border-radius: 10px;
   margin-left: 50px;
@@ -175,10 +179,9 @@ color: #fff;}
 
 /* ---------------- Sections ---------------- */
 /*section { padding: 80px 60px; }*/
-.two-col { display: grid; grid-template-columns: 1fr 1fr;}
-
-
-
+.two-col { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr;}
 
 /*Services*/
 .services{
@@ -186,38 +189,45 @@ color: #fff;}
   position: relative;
   border-top: 3px solid #0f6e75;
   border-bottom: 3px solid #0f6e75;
+  width: 100%;
 }
-.serv-con { 
+ .serv-con { 
   display: grid; 
   grid-template-columns: repeat(auto-fit, minmax(400px,1fr)); 
-  gap: 30px; }
-.services .serv-con .card{
+  gap: 30px; 
+  padding: 0 10px;
+}  
+.services .serv-con .card-serv{
   margin-top: 20px;
-  padding: 0;
   min-height: 350px;
+  border: 1px solid #ddd; 
+  text-align: center; 
+  background: #fff; 
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+  transition: transform 0.3s;
 }
 .services h1{
   color: #0F6E75;
 }
-.card img { 
+.services .serv-con .card-serv img { 
   width: 100%; 
   height: 180px; 
   object-fit: cover;
   }
-  .services .serv-con .card h3{
+  .services .serv-con .card-serv h3{
     font-size: 20px;
     color: #0F6E75;
     font-weight: 800;
   }
-  .services .serv-con .card p{
+  .services .serv-con .card-serv p{
     font-weight: 500;
   }
-.services .serv-con .card p, .services .serv-con .card h3{
+.services .serv-con .card-serv p, .services .serv-con .card-serv h3{
   text-align: left;
   padding: 10px 30px;
 }
 
-.services .serv-con .card a{
+.services .serv-con .card-serv a{
   align-items: center;
 }
 .services a{
@@ -232,14 +242,7 @@ color: #fff;}
   text-decoration: none;
   transform: translateX(-5px);
 }
-.card {
-  position: relative;
-  border: 1px solid #ddd; 
-  padding: 20px; text-align: center; 
-  background: #fff; 
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
-  transition: transform 0.3s;
-}
+
 /*-----------------Why Choose Us------------------*/
 .choose{
   position: relative;
@@ -256,7 +259,8 @@ color: #fff;}
 }
 .choose .choose-cont .five-col{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); 
+  gap: 20px;
   color: #fff;
 }
 .choose .choose-cont .five-col, .choose .choose-cont h2{
@@ -374,7 +378,7 @@ text-align: justify;
   font-size: 22px;
    border-radius: 8px; }
 
-/*-------------------------------------------------*/
+/*--------------------Client Review-----------------------------*/
   .review{
     position: relative;
     padding: 150px 20px;
@@ -391,11 +395,11 @@ text-align: justify;
       position: relative;
       margin: 20px auto;
     }
-    .review-track {
+    .review .review-slider .review-track {
       display: flex;
       transition: transform 0.6s ease;
     }
-    .review-card {
+    .review .review-slider .review-track .review-card {
       min-width: 380px;
       margin: 10px;
       padding: 20px;
@@ -559,7 +563,7 @@ text-align: justify;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 90%;
   background: rgba(0,0,0,0.95);
   display: none;
   justify-content: center;
@@ -569,7 +573,7 @@ text-align: justify;
 
 .fullscreen img {
   max-width: 95%;
-  max-height: 90%;
+  max-height: 80%;
   border-radius: 15px;
   animation: zoomIn 0.4s ease;
 }
@@ -601,41 +605,13 @@ footer {
 }
 
 /*--------------------Fade-in Animations---------------*/
-.fade-in { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
-.fade-in.show { opacity: 1; transform: translateY(0); }
+.fade-in {
+   opacity: 0; 
+   transform: translateY(40px); 
+  transition: opacity 0.8s ease, transform 0.8s ease; }
+.fade-in.show { 
+  opacity: 1; 
+  transform: translateY(0); }
 /* ---------------- Responsive ---------------- */
-@media(max-width: 992px){
-  .hero { grid-template-columns: 1fr; height: auto; padding: 40px 20px; }
-  .two-col, .booking { grid-template-columns: 1fr; }
-
 #reviewsList, #extraReviews { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-  /*----------------Review------------*/
-  .review-slider{
-    width: 80%;
-  }
-  .review-card{
-    padding: 10px;
-  }
-  .comment{
-    font-size: 15px;
-  }
-  nav {
-    display: none; /* hide nav links */
-    flex-direction: column;
-    background: #fff;
-    position: absolute;
-    top: 80px; /* adjust based on header height */
-    right: 20px;
-    padding: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
 
-  nav.show {
-    display: flex; /* show when toggled */
-  }
-
-  .menu-toggle {
-    display: block; /* show hamburger */
-  }
-
-}

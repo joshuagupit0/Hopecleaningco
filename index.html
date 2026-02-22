@@ -7,6 +7,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
   <link rel="stylesheet" href="Style\style.css">
+  <link rel="stylesheet" href="Style\responsive.css">
+  <!--
 <style>
     /* ===== LOADING SCREEN ===== */
 #loader {
@@ -66,9 +68,11 @@
   visibility: hidden;
 }
   </style>
+  -->
 </head>
 
-<!-- Loading Screen -->
+
+<!-- Loading Screen 
 <div id="loader">
   <div class="loader-container">
     <img src="images\HCClogo.png" alt="Hope Cleaning Co Logo">
@@ -78,22 +82,12 @@
     </div>
   </div>
 </div>
+-->
 <body>
 
 <!-- HEADER -->
 <header>
   <a href="#home"><img src="images\HCClogo.png" alt=""></a>
-  <div class="contact-top">
-    <div>
-      <span class="material-symbols-outlined icon-style">call</span>
-      <p>+04 2650-9090</p>
-    </div>
-    <div>
-      <span class="material-symbols-outlined icon-style">mail</span>
-      <p>hopecleaningco88@gmail.com</p>
-    </div>
-  </div>
-
   <!-- Hamburger Menu Button -->
   <button class="menu-toggle" id="menu-toggle">
     <span class="material-symbols-outlined">menu</span>
@@ -105,6 +99,18 @@
     <a href="#services">Services</a>
     <a href="#packages">Package</a>
     <a href="#booking" class="btn">Book Now</a>
+
+    <div class="contact-top">
+    <div>
+      <span class="material-symbols-outlined icon-style">call</span>
+      <p>+04 2650-9090</p>
+    </div>
+    <div>
+      <span class="material-symbols-outlined icon-style">mail</span>
+      <p>hopecleaningco88@gmail.com</p>
+    </div>
+  </div>
+
   </nav>
 </header>
 
@@ -139,42 +145,39 @@ We treat every home like our own — with respect, care, and professionalism.
 
 <!-- SERVICES -->
 <section id="services" class="services">
-  <h1>Our Services</h1><br>
+  <h1>Our Services</h1>
   <div class="serv-con">
-    <div class="card">
+    <div class="card-serv">
       <img src="images\service1.png" alt="Deep Cleaning">
       <h3>End of Lease Cleaning</h3>
       <p>Complete deep cleaning to help secure your bond return.</p>
-      
       <!--<a class="btn">Learn more</a>-->
     </div>
-    <div class="card">
+    <div class="card-serv">
       <img src="images\service2.png" alt="Spring Cleaning">
       <h3>Window Cleaning</h3>
       <p>Interior window cleaning for a crystal-clear finish.</p>
-      
-      
     </div>
-    <div class="card">
+    <div class="card-serv">
       <img src="images\service3.png" alt="Move-In Cleaning">
       <h3>Office Cleaning</h3>
       <p>Reliable office and commercial space cleaning.</p>
     </div>
-    <div class="card">
+    <div class="card-serv">
       <img src="images\service4.png" alt="Deep Cleaning">
       <h3>Carpet Cleaning</h3>
       <p>Professional carpet refresh and stain treatment.</p>
       
       <!--<a class="btn">Learn more</a>-->
     </div>
-    <div class="card">
+    <div class="card-serv">
       <img src="images\service5.png" alt="Spring Cleaning">
       <h3>Oven Cleaning</h3>
       <p>Deep oven cleaning to remove grease and buildup.</p>
       
       
     </div>
-    <div class="card">
+    <div class="card-serv">
       <img src="images\service6.png" alt="Move-In Cleaning">
       <h3>Airbnb Cleaning</h3>
       <p>Fast turnaround cleaning for short-term rental properties.</p>
@@ -293,6 +296,7 @@ We treat every home like our own — with respect, care, and professionalism.
   </div>
 </footer>
 </body>
+
 <script>
   //Menubar
 document.getElementById("menu-toggle").addEventListener("click", function () {
@@ -310,6 +314,7 @@ document.querySelectorAll('section, .card, .two-col').forEach(el => {
   observer.observe(el);
 });
 </script>
+
 <script src="js\ClientReviews.js"></script>
 <script src="js\gallery.js"></script>
 <script src="js\script.js"></script>

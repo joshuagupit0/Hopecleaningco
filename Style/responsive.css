@@ -1,0 +1,211 @@
+
+@media(max-width: 992px){
+  .hero { grid-template-columns: 1fr; height: auto; padding: 40px 20px; }
+  .two-col, .booking { grid-template-columns: 1fr; }
+
+
+  
+/*-------------Header---------*/
+  nav {
+    display: none; /* hide nav links */
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 80px; /* adjust based on header height */
+    right: 10px;
+    padding: 15px;
+    width: 300px;
+    height: 600px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  header nav a{
+    display: inline-block;
+    margin-left: auto;
+    text-align: center;
+    width: 100%;
+  }
+ header nav .contact-top{
+    position: absolute;
+    left: 0;
+    top: auto;
+    bottom: 10px;
+  }
+  header nav .contact-top div{
+    display: block;
+  }
+  nav.show {
+    display: flex; /* show when toggled */
+  }
+
+  .menu-toggle {
+    display: block; /* show hamburger */
+  }
+
+  /*-----------Hero Section-------------*/
+    .hero{
+        width: 100%;
+    }
+    .hero .hero-content{
+        width: 400px;
+    }
+    .hero .hero-content h1 {
+        font-size: 35px;
+    }
+    .hero .hero-content p{
+        font-size: 13px;
+    }
+    /*--------------Package-----------*/
+
+.package .packages .card-pack div h2{
+    text-align: center;
+}
+  /*----------------Review------------*/
+  .review-slider{
+    width: 80%;
+  }
+  .review-card{
+    padding: 10px;
+  }
+  .comment{
+    font-size: 15px;
+  }
+}
+@media(max-width: 912px){
+    /*--------------hero-------------*/
+  .hero{
+        width: 100%;
+    }
+    .hero .hero-content{
+        width: 400px;
+    }
+    .hero .hero-content h1 {
+        font-size: 40px;
+    }
+    .hero .hero-content p{
+        font-size: 15px;
+    }
+    /*--------------about-----------*/
+    .about .two-col {   
+  grid-template-columns: repeat(auto-fit, minmax(500px,1fr)); 
+}
+.about .two-col img, .about .two-col div{
+  min-height: 50vh;
+}
+}
+
+@media(max-width: 820px){
+    /*---------Package-------*/
+    .package{ 
+  padding: 80px 10px; 
+}
+.package .packages{
+    gap: 15px;
+}
+.package .packages .card-pack{
+    height: 60vh;
+}
+/*--------Services----------*/
+ .serv-con { 
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); 
+}  
+}
+@media(max-width: 540px){
+    /*------------Hero----------------*/
+    .hero{
+        padding: 20px;
+    }
+    .hero .hero-content{
+        width: 400px;
+        padding: 20px;
+        margin-left: 20px;
+    }
+    .hero .hero-content h1 {
+        font-size: 28px;
+    }
+    .hero .hero-content p{
+        font-size: 11px;
+    }
+    /*-------------About------------*/
+  .about .two-col {   
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); 
+}
+.about .two-col img, .about .two-col div{
+  min-height: 50vh;
+}
+.about .two-col div p{
+  font-size: 13px;
+  padding-bottom: 20px;
+}
+/*----------package---------*/
+.package{ 
+  padding: 80px 30px; 
+}
+.package .packages{
+    gap: 15px;
+    display: inline-flexbox;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); 
+}
+.package .packages .card-pack{
+    width: 300px;
+    height: 60vh;
+}
+/*--------Services----------*/
+ .serv-con { 
+  grid-template-columns: repeat(auto-fit, minmax(80%,1fr)); 
+}  
+}
+@media(max-width: 414px){
+  /*------------Hero----------------*/
+    .hero{
+        padding: 20px;
+    }
+    .hero .hero-content{
+        width: 300px;
+        padding: 20px;
+        margin-left: 10px;
+    }
+    .hero .hero-content h1 {
+        font-size: 20px;
+    }
+    .hero .hero-content p{
+        font-size: 11px;
+    }
+    /*--------Services----------*/
+ .serv-con { 
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); 
+}  
+
+  /* ---------Form------------- */
+    .review .form-cont{
+      grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    }
+.package{ 
+  padding: 80px 0; 
+}
+.package .packages{
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); 
+}
+.package .packages .card-pack{
+    width: 100%;
+    height: 60vh;
+}
+/*------------review client-----------*/
+.review-slider{
+    width: 80%;
+  }
+  .review-card{
+    padding: 0;
+  }
+  .comment{
+    font-size: 15px;
+  }
+  .review .review-slider .review-track .review-card {
+      width: 100%;
+    }
+
+}
+
+@media(max-width: 390px){
+  
+}

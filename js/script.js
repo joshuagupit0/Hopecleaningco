@@ -74,22 +74,7 @@ document.getElementById("reviewForm").addEventListener("submit", async e => {
   }
 });
 
-// --------------------- Fade-in Animation on Scroll ---------------------
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting) entry.target.classList.add('show');
-  });
-}, { threshold: 0.15 });
-
-document.querySelectorAll('section, .card, .two-col').forEach(el => {
-  el.classList.add('fade-in'); 
-  observer.observe(el);
-});
 
 // Load reviews initially
 loadReviews();
 
-//Menubar
-document.getElementById("menu-toggle").addEventListener("click", function () {
-  document.getElementById("nav").classList.toggle("show");
-});
