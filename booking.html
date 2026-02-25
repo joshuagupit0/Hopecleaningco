@@ -69,6 +69,7 @@
 }
 .booking {
     position: relative;
+    background: #fff;
 }
 .booking .two-colum {   
   display: grid;
@@ -77,22 +78,55 @@
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
   min-height: 700px;
   padding: 100px 100px;
+  
+  z-index: 1;
 }
-.booking .two-colum img, .about .two-colum .form-wrapper{
+.booking::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #CFF5F7, #0f6e75);
+  background-size: cover;
+  z-index: -1;
+  opacity: 0.6;
+}
+.booking .two-colum .side-left, .about .two-colum .form-wrapper{
   display: inline-flex;
   width: 100%;
   height: 100%;
+  
 }
+
 .booking .two-colum .form-wrapper {
       background: #ffffff;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       padding: 10px 10px;
+      z-index: 2;
     }
+    .booking .two-colum .side-left{
+        display:  flex;
+        align-items:  center;
+        justify-items:  center;
+    }
+   .booking .two-colum .side-left div h2{
+    font-size: 40px;
+    font-weight: 700;
+   }
+   .booking .two-colum .side-left div p{
+    font-weight:  500;
+    font-weight:  20px;
+   }
+   .booking .two-colum .side-left div{
+    padding: 10px;
+   }
  .form-wrapper iframe {
     display: flex;
       border: none;
       width: 100%;
-      height: 700px;
+      min-height: 700px;
       border-radius: 8px;
     }
     @media(max-width: 540px){
@@ -102,38 +136,71 @@
         padding: 100px 10px;
         }
     }
+    .home-booking {
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  color: #fff;
+  min-height: 40vh; 
+  padding: 60px; 
+   background: url('images/book01.png') center/cover no-repeat;
+  align-items: center;
+  gap: 20px;
+  z-index: 1;
+}
+.home-booking h1{
+  font-size: 45px;
+  font-weight: 900;
+}
+.home-booking::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #adfbff;
+  background-size: cover;
+  z-index: -1;
+  opacity: 0.4;
+}
   </style>
 
 </head>
 
 
- <!--Loading Screen-->
+ <!--Loading Screen--> 
 <div id="loader">
   <div class="loader-container">
+    <div class="side-left"></div>
     <img src="images\HCClogo.png" alt="Hope Cleaning Co Logo">
-    
     <div class="buffer-bar">
       <div class="buffer-progress"></div>
     </div>
   </div>
-</div> 
+</div>
 
 <body>
 
 <!-- HEADER -->
 <header>
-  <a href="index.html"><img src="images\HCClogo.png" alt=""></a>
+  <a href="#home"><img src="images\HCClogo.png" alt=""></a>
   <!-- Hamburger Menu Button -->
   <button class="menu-toggle" id="menu-toggle">
     <span class="material-symbols-outlined">menu</span>
   </button>
 
   <nav id="nav">
-    <a href="index.html">Home</a>
-    <a href="index.html#about">About Us</a>
-    <a href="service.html">Services</a>
-    <a href="package.html">Package</a>
-    <a class="btn" id="bookBtn">Book Now</a>
+    <a href="index.html" class="nav-link active">Home</a>
+    <a href="index.html#about" class="nav-link">About Us</a>
+    <a href="#" class="nav-link">Services</a>
+    <a href="package.html" class="nav-link">Pricing</a>
+    <a href="#reviews" class="nav-link">Reviews</a>
+    <a href="#gallery" class="nav-link">Gallery</a>
+    <a href="#contact-us" class="nav-link">Contact Us</a>
+    <a class="btn" id="#" href="#">Book Now</a>
 
     <div class="contact-top">
     <div>
@@ -149,10 +216,21 @@
   </nav>
 </header>
 
+<!-- HERO SECTION -->
+<section class="hero home-booking" id="home">
+  <h1>Book Now</h1>
+</section>
+
 <!--------------Booking--------------->
 <section id="booking" class="booking">
     <div class="two-colum">
-    <img src="images\service1.png" alt="Deep Cleaning">
+    <div class="side-left">
+
+      <div class="book-bg">
+        <img src="images/booking02.png">
+        <h2>Thank you for choosing us!</h2>
+       <p>We’re excited to take care of your cleaning needs. We’ll be in touch soon to confirm the details.</p></div>
+    </div>
     <div class="form-wrapper">
     <!-- Replace FORM_ID with your actual Google Form embed link -->
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdUw5u3eH7fwsmXDwqYzMGLDwAudpKNny6QPB2tF7SA3DG5Mw/viewform?embedded=true" width="" height="" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
@@ -160,9 +238,67 @@
   </div>
 </section>
 
+<!-- Client Review -->
+<section id="reviews" class="review">
+  <h2>Client Reviews</h2>
+  <div class="review-slider">
+    <div class="review-track" id="review-track"></div>
+    <button class="nav-btn left" onclick="prevSlide()">&#10094;</button>
+    <button class="nav-btn right" onclick="nextSlide()">&#10095;</button>
+  </div>
+
+  <div id="popup">
+    <h3>Review Submitted!</h3>
+    <p id="popupMessage"></p>
+    <button onclick="closePopup()">OK</button>
+  </div>
+
+ 
+  <div class="form-cont" style="display: none;">
+    <img src="images/review.png">
+  <form id="reviewForm" >
+     <h2>Submit Your Review</h2>
+    <input type="text" id="name" placeholder="Your Name" required>
+    <select id="rating" required>
+      <option value="" class="star-color"><span>Rating</span></option>
+      <option value="1" class="star-color">★☆☆☆☆ (1)</option>
+      <option value="2" class="star-color">★★☆☆☆ (2)</option>
+      <option value="3" class="star-color">★★★☆☆ (3)</option>
+      <option value="4" class="star-color">★★★★☆ (4)</option>
+      <option value="5" class="star-color">★★★★★ (5)</option>
+    </select>
+    <textarea id="comment" placeholder="Your Comment" rows="4" required></textarea>
+    <button class="btn" type="submit">Submit Review</button>
+  </form>
+  </div>
+</section>
+
+<section id="gallery" class="gallery">
+  <div class="gallery-wrapper">
+    <h2>Gallery</h2>
+    <h1>“Real results from real clients.”</h1>
+  <div class="gallery-track">
+    <!-- Duplicate images for smooth infinite scroll -->
+    <img src="images/gallery/gallery1.jpeg">
+    <img src="images/gallery/gallery2.jpeg">
+    <img src="images/gallery/gallery3.jpeg">
+    <img src="images/gallery/gallery4.jpeg">
+    <img src="images/gallery/gallery5.jpeg">
+    <img src="images/gallery/gallery6.jpeg">
+    <img src="images/gallery/gallery7.jpeg">
+    <img src="images/gallery/gallery8.jpeg">
+  </div>
+</div>
+
+<!-- Fullscreen -->
+<div class="fullscreen" id="fullscreen">
+  <span class="close-btn" id="closeBtn">&times;</span>
+  <img id="fullImg">
+</div>
+</section>
 
 <!-- FOOTER -->
-<footer>
+<section id="contact-us" class="footer">
   <div>
     <a href="#home"><img src="images\HCClogo.png" alt=""></a>
     <h3>Hope Cleaning Co.</h3>
@@ -186,43 +322,17 @@
     <h4>Follow us on.</h4><br>
     <p>
       <a href="https://www.facebook.com/profile.php?id=61562716752062"><i class="fa-brands fa-facebook"></i>
-      </a><a><i class="fa-brands fa-facebook-messenger"></i></a>
+      </a>
+      <a><i class="fa-brands fa-facebook-messenger"></i></a>
+      <a><i class="fa-brands fa-square-instagram"></i></a>
+      <a><i class="fa-brands fa-tiktok"></i></a>
+      <a><i class="fa-brands fa-google"></i></a>
     </p><br>
     <p>© 2026 Hope Cleaning Co. All Rights Reserved.</p>
   </div>
-   <!-- Popup -->
-  <div class="popup-overlay" id="popupOverlay">
-    <div class="popup-box">
-      <h2>Terms & Conditions</h2>
-      <p><strong>By booking with Hope Cleaning Co, you agree to the following:</strong></p>
-      <p><b>1. Booking Confirmation</b><br>
-        All bookings are subject to availability. We will contact you within 24 hours to confirm your appointment.</p>
-      <p><b>2. Access to Property</b><br>
-        Clients must provide safe and clear access to the property at the scheduled time. Hot water and power must be available during the cleaning. If we cannot access the property, a cancellation fee may apply.</p>
-      <p><b>3. Payment Terms</b><br>
-        Payment is due on the day of service unless otherwise agreed. For End of Lease or One-Off Jobs, half payment is required upfront and the remaining half upon completion. If the client does not request a re-clean, or is not satisfied but does not want the re-clean, the second half payment is still required.</p>
-      <p><b>4. Cancellations</b><br>
-        At least 24 hours’ notice is required for cancellations or rescheduling. Late cancellations may incur a fee.</p>
-      <p><b>5. Satisfaction Guarantee</b><br>
-        We offer a 7-day satisfaction guarantee. If you are not satisfied, we will return and re-clean at no extra charge if requested within 7 days.</p>
-      <p><b>6. Safety & Liability</b><br>
-        We are fully insured. Pre-existing damage or wear and tear is not covered.</p>
-
-      <h2>Privacy Policy</h2>
-      <p>Hope Cleaning Co respects your privacy.<br>
-        • We collect personal information only for booking and communication purposes.<br>
-        • We do not share your information with third parties.<br>
-        • Your details are stored securely.</p>
-
-      <div class="popup-buttons">
-        <button class="decline-btn" id="declineBtn">Decline</button>
-        <button class="accept-btn" id="acceptBtn">Accept</button>
-      </div>
-    </div>
-  </div>
-</footer>
+</section>
 </body>
-
+<script src="js\terms.js"></script>
 <script>
   //Menubar
 document.getElementById("menu-toggle").addEventListener("click", function () {
@@ -240,9 +350,13 @@ document.querySelectorAll('section, .card, .two-col').forEach(el => {
   observer.observe(el);
 });
 </script>
+<!-------------------Scroll Animation--------------->
 
+
+<script src="js\ClientReviews.js"></script>
+<script src="js\gallery.js"></script>
 <script src="js\script.js"></script>
-<script src="js\terms.js"></script>
+
 
 <script>
   window.addEventListener("load", function () {
@@ -251,7 +365,7 @@ document.querySelectorAll('section, .card, .two-col').forEach(el => {
     // Delay slightly for smooth feel
     setTimeout(() => {
       loader.classList.add("hidden");
-    }, 3200);
+    }, 1200);
   });
 </script>
 

@@ -1,10 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 /* ---------------- Reset & Base ---------------- */
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* { box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+  scroll-behavior:smooth;
+}
 body { font-family: 'Poppins', sans-serif;
    color: #333; 
    line-height: 1.6; 
    background: #f9f9f9; }
+   *{
+  box-sizing:border-box;
+  scroll-behavior:smooth; /* Smooth scroll */
+}
 a { 
   text-decoration: none; 
   color: #0F6E75;
@@ -35,7 +43,8 @@ nav {
 
 header {
   position: relative;
-  display: flex; justify-content: space-between; 
+  display: flex; 
+  justify-content: space-between; 
   align-items: center;
   padding: 20px 60px; 
   background: #CFF5F7; 
@@ -51,6 +60,7 @@ header a img{
 header nav a { 
   margin-left: 24px; font-weight: 500; 
 }
+
 header nav{
   align-items: center;
 }
@@ -58,6 +68,7 @@ header nav{
 header nav .contact-top{
   position: absolute;
   top: -50px;
+  right: 0;
 }
 header nav .contact-top div{
   display: inline-flex;
@@ -90,10 +101,19 @@ color: #fff;}
   grid-template-columns: 2fr 2fr;
   min-height: 90vh; 
   padding: 60px; 
-  background: url('../images/Home.png') center/cover no-repeat;
+  
   align-items: center;
   gap: 20px;
   z-index: 1;
+}
+.home{
+  background: url('../images/Home.png') center/cover no-repeat;
+}
+.home-service{
+  background: url('../images/Services.png') center/cover no-repeat;
+}
+.home-booking{
+  background: url('../images/book01.png') center/cover no-repeat;
 }
 .hero::before{
   content: "";
@@ -105,7 +125,7 @@ color: #fff;}
   background-color: #adfbff;
   background-size: cover;
   z-index: -1;
-  opacity: 0.2;
+  opacity: 0.4;
 }
 
 .hero .hero-content {
@@ -211,6 +231,11 @@ color: #fff;}
 .services h1{
   color: #0F6E75;
 }
+.services h2{
+  font-size: 15px;  
+  text-align: left;
+  color: #5a5a5a;
+}
 .services .serv-con .card-serv img { 
   width: 100%; 
   height: 180px; 
@@ -224,15 +249,18 @@ color: #fff;}
   .services .serv-con .card-serv p{
     font-weight: 500;
   }
+
 .services .serv-con .card-serv p, .services .serv-con .card-serv h3{
   text-align: left;
-  padding: 10px 30px;
+  padding: 0 30px;
 }
-
+.services .serv-con .card-serv p, .services .serv-con .card-serv h3, .services .serv-con .card-serv a{
+margin-bottom: 10px;
+}
 .services .serv-con .card-serv a{
   align-items: center;
 }
-.services a{
+.services .text-btn{
   margin-top: 20px;
   font-family: 600;
   display:  flex;
@@ -240,7 +268,7 @@ color: #fff;}
   text-decoration: underline;
   transition: transform 0.3s;
 }
-.services a:hover{
+.services .text-btn:hover{
   text-decoration: none;
   transform: translateX(-5px);
 }
@@ -601,24 +629,24 @@ text-align: justify;
 
 
 /* ---------------- Footer ---------------- */
-footer {
+.footer {
   background: #CFF5F7; 
   padding: 40px 60px; 
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); 
   gap: 30px;
 }
-footer div{
+.footer div{
   display: inline-flexbox;
   align-items: center;
 }
-footer div a img{
+.footer div a img{
   width: 100px;
 }
-footer .contact-bottom{
+.footer .contact-bottom{
   position: relative;
 }
-footer .contact-bottom div{
+.footer .contact-bottom div{
   display: flex;
   align-items: center;
   margin-top: 20px;
@@ -626,9 +654,10 @@ footer .contact-bottom div{
   font-weight: 500;
   color: #0F6E75;
 }
-footer div p a i{
+.footer div p a i{
   font-size: 30px;
 }
+
 /*--------------------Fade-in Animations---------------*/
 .fade-in {
    opacity: 0; 
@@ -720,3 +749,95 @@ footer div p a i{
       background: #ddd;
     }
 
+
+/*------------------Service Post----------------*/
+    .serv-post{
+        position: relative;
+    }
+.two-col {   
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px,1fr)); 
+  gap: 0;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05); 
+  border: 1px solid #ddd;
+}
+.serv-post .two-col img, .serv-post .two-col .post-cont{
+    display: inline-block;
+    width: 100%;
+    min-height: 70vh;
+}
+.serv-post .two-col {
+    color: #fff;
+}
+ .post-cont{
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center; 
+    height: 100%;           
+}
+.serv-post .two-col .post-cont{
+    background-color: #0f6e75;
+    background: linear-gradient(to top, #CFF5F7, #0f6e75);
+
+}
+ h1 {
+    font-size: 40px;
+}
+.serv-post .two-col .post-cont div{
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+}
+.serv-post .two-col .post-cont div span{
+    font-size: 40px;
+}
+.serv-post .two-col .post-cont div span p{
+    font-size: 20px;
+}
+.serv-post .two-col .post-cont h1, .serv-post .two-col .post-cont div{
+    width: 100%;
+}
+.serv-detail{
+    position: relative;
+    padding: 50px 100px
+}
+.serv-detail .two-col img, .serv-detail .two-col .post-cont{
+    display: inline-block;
+    width: 100%;
+    min-height: 70vh;
+}
+.serv-detail .two-col .post-cont{
+    justify-items: left;
+}
+.serv-detail h1{
+    padding-bottom: 40px;
+    color: #0f6e75;
+    
+}
+.book-image{
+  margin-top: 30px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #CFF5F7, #0f6e75);
+  min-height: 200px;
+  padding: 20px;
+}
+.book-image .bk-image{
+  width: 300px;
+}
+.book-image .bk-image img{
+  width: 300px;
+}
+.book-image .bk-cont{
+ min-width: 300px;
+
+}
+.book-image .bk-cont{
+  width: 70%;
+}

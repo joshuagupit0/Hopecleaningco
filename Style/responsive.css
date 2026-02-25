@@ -106,8 +106,13 @@
 }
 /*--------Services----------*/
  .serv-con { 
-  grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); 
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
 }  
+/*-----Serv-post---------*/
+.serv-detail{
+    position: relative;
+    padding: 50px 50px;
+}
 }
 @media(max-width: 540px){
     /*------------Hero----------------*/
@@ -154,6 +159,14 @@
  .serv-con { 
   grid-template-columns: repeat(auto-fit, minmax(80%,1fr)); 
 } 
+/*-----Serv-post---------*/
+.serv-post{
+    color: #ddd;
+}
+.serv-detail{
+    position: relative;
+    padding: 50px 0;
+}
 }
 
 

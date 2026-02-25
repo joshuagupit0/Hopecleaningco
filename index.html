@@ -94,10 +94,13 @@
   </button>
 
   <nav id="nav">
-    <a href="#home">Home</a>
-    <a href="#about">About Us</a>
-    <a href="service.html">Services</a>
-    <a href="package.html">Package</a>
+    <a href="#home" class="nav-link active">Home</a>
+    <a href="#about" class="nav-link">About Us</a>
+    <a href="service.html" class="nav-link">Services</a>
+    <a href="package.html" class="nav-link">Pricing</a>
+    <a href="#reviews" class="nav-link">Reviews</a>
+    <a href="#gallery" class="nav-link">Gallery</a>
+    <a href="#contact-us" class="nav-link">Contact Us</a>
     <a class="btn" id="bookBtn">Book Now</a>
 
     <div class="contact-top">
@@ -115,11 +118,11 @@
 </header>
 
 <!-- HERO SECTION -->
-<section class="hero" id="home">
+<section class="hero home" id="home">
   <div class="hero-content">
     <h1>Professional Cleaning You Can Trust</h1>
     <p>Hope Cleaning Co provides reliable residential and commercial cleaning services across Ballarat and surrounds, Australia. We deliver spotless results with care and attention to detail.</p>
-    <a id="bookBtn" class="btn">Book now</a>
+    <a class="btn" id="bookBtn1">Book Now</a>
   </div>
   <div class="hero-image"></div>
 </section>
@@ -192,7 +195,7 @@ We treat every home like our own — with respect, care, and professionalism.
     <h2>Why Choosing Us?</h2>
     <div class="five-col">
       <div><span class="material-symbols-outlined">assured_workload</span><p>Fully Insured</p></div>
-      <div><span class="material-symbols-outlined">eye_tracking</span><p>Police-checked<br>Cleaners</p></div>
+      <div><span class="material-symbols-outlined">eye_tracking</span><p>Police-checked</p></div>
       <div><span class="material-symbols-outlined">history</span><p>Flexible<br>Scheduling</p></div>
       <div><span class="material-symbols-outlined">price_check</span><p>Affordable<br>Pricing</p></div>
       <div><span class="material-symbols-outlined">workspace_premium</span><p>100% Satisfaction<br>Guarantee</p></div>
@@ -278,38 +281,7 @@ We treat every home like our own — with respect, care, and professionalism.
   <img id="fullImg">
 </div>
 </section>
-
-
-<!-- FOOTER -->
-<footer>
-  <div>
-    <a href="#home"><img src="images\HCClogo.png" alt=""></a>
-    <h3>Hope Cleaning Co.</h3>
-    <p>Let's start a conversation</p>
-  </div>
-  <div class="contact-bottom">
-    <div>
-      <span class="material-symbols-outlined icon-style">call</span>
-      <p> +61 426-509-090</p>
-    </div>
-    <div>
-      <span class="material-symbols-outlined icon-style">mail</span>
-      <p> hopecleaningco88@gmail.com</p>
-    </div>
-    <div>
-      <span class="material-symbols-outlined">location_on</span>
-      <p> Ballarat, Victoria Australia</p>
-    </div>
-  </div>
-  <div>
-    <h4>Follow us on.</h4><br>
-    <p>
-      <a href="https://www.facebook.com/profile.php?id=61562716752062"><i class="fa-brands fa-facebook"></i>
-      </a><a><i class="fa-brands fa-facebook-messenger"></i></a>
-    </p><br>
-    <p>© 2026 Hope Cleaning Co. All Rights Reserved.</p>
-  </div>
-   <!-- Popup -->
+<!-- Popup -->
   <div class="popup-overlay" id="popupOverlay">
     <div class="popup-box">
       <h2>Terms & Conditions</h2>
@@ -339,9 +311,43 @@ We treat every home like our own — with respect, care, and professionalism.
       </div>
     </div>
   </div>
-</footer>
-</body>
 
+<!-- FOOTER -->
+<section id="contact-us" class="footer">
+  <div>
+    <a href="#home"><img src="images\HCClogo.png" alt=""></a>
+    <h3>Hope Cleaning Co.</h3>
+    <p>Let's start a conversation</p>
+  </div>
+  <div class="contact-bottom">
+    <div>
+      <span class="material-symbols-outlined icon-style">call</span>
+      <p> +61 426-509-090</p>
+    </div>
+    <div>
+      <span class="material-symbols-outlined icon-style">mail</span>
+      <p> hopecleaningco88@gmail.com</p>
+    </div>
+    <div>
+      <span class="material-symbols-outlined">location_on</span>
+      <p> Ballarat, Victoria Australia</p>
+    </div>
+  </div>
+  <div>
+    <h4>Follow us on.</h4><br>
+    <p>
+      <a href="https://www.facebook.com/profile.php?id=61562716752062"><i class="fa-brands fa-facebook"></i>
+      </a>
+      <a><i class="fa-brands fa-facebook-messenger"></i></a>
+      <a><i class="fa-brands fa-square-instagram"></i></a>
+      <a><i class="fa-brands fa-tiktok"></i></a>
+      <a><i class="fa-brands fa-google"></i></a>
+    </p><br>
+    <p>© 2026 Hope Cleaning Co. All Rights Reserved.</p>
+  </div>
+</section>
+</body>
+<script src="js\terms.js"></script>
 <script>
   //Menubar
 document.getElementById("menu-toggle").addEventListener("click", function () {
@@ -359,11 +365,13 @@ document.querySelectorAll('section, .card, .two-col').forEach(el => {
   observer.observe(el);
 });
 </script>
+<!-------------------Scroll Animation--------------->
+
 
 <script src="js\ClientReviews.js"></script>
 <script src="js\gallery.js"></script>
 <script src="js\script.js"></script>
-<script src="js\terms.js"></script>
+
 
 <script>
   window.addEventListener("load", function () {
@@ -372,7 +380,7 @@ document.querySelectorAll('section, .card, .two-col').forEach(el => {
     // Delay slightly for smooth feel
     setTimeout(() => {
       loader.classList.add("hidden");
-    }, 3200);
+    }, 2200);
   });
 </script>
 

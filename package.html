@@ -68,6 +68,7 @@
   visibility: hidden;
 }
 
+
 /*-----------package-------------*/
   .header {
       background: linear-gradient(135deg, #0F6E75, #0f8a8a);
@@ -119,7 +120,6 @@
 
     .card ul li {
       padding: 8px 0;
-      border-bottom: 1px solid #eee;
     }
 
     .card ul li:last-child {
@@ -140,12 +140,42 @@
         font-size: 1.1rem;
       }
     }
+    .hero-pack {
+  font-family: "Montserrat", sans-serif;
+  align-content: center;
+  justify-items: center;
+  position: relative;
+  min-height: 50vh; 
+  padding: 60px; 
+  background: url('images/package.png') center/cover no-repeat;
+  align-items: center;
+  gap: 20px;
+  z-index: 1;
+  color: #0F6E75;
+}
+.hero-pack::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #adfbff;
+  background-size: cover;
+  z-index: -1;
+  opacity: 0.4;
+}
+.hero-pack h1{
+  font-size: 45px;
+  font-weight: 900;
+}
+
   </style>
 
 </head>
 
 
- <!--Loading Screen-->
+ <!--Loading Screen
 <div id="loader">
   <div class="loader-container">
     <img src="images\HCClogo.png" alt="Hope Cleaning Co Logo">
@@ -154,24 +184,27 @@
       <div class="buffer-progress"></div>
     </div>
   </div>
-</div> 
+</div>--> 
 
 <body>
 
 <!-- HEADER -->
 <header>
-  <a href="index.html"><img src="images\HCClogo.png" alt=""></a>
+  <a href="#home"><img src="images\HCClogo.png" alt=""></a>
   <!-- Hamburger Menu Button -->
   <button class="menu-toggle" id="menu-toggle">
     <span class="material-symbols-outlined">menu</span>
   </button>
 
   <nav id="nav">
-    <a href="index.html">Home</a>
-    <a href="index.html#about">About Us</a>
-    <a href="service.html">Services</a>
-    <a href="package.html">Package</a>
-    <a class="btn" id="bookBtn">Book Now</a>
+    <a href="index.html" class="nav-link active">Home</a>
+    <a href="index.html#about" class="nav-link">About Us</a>
+    <a href="service.html" class="nav-link">Services</a>
+    <a href="package.html" class="nav-link">Pricing</a>
+    <a href="index.html#reviews" class="nav-link">Reviews</a>
+    <a href="index.html#gallery" class="nav-link">Gallery</a>
+    <a href="#contact-us" class="nav-link">Contact Us</a>
+    <a class="btn" id="bookBtn1">Book Now</a>
 
     <div class="contact-top">
     <div>
@@ -187,12 +220,15 @@
   </nav>
 </header>
 
+<!-- HERO SECTION -->
+<section class="hero-pack">
+  <h1>Cleaning Services Pricing</h1>
+</section>
 
 <!------------------Package------------->
 
   <div class="header">
-    <h1>Cleaning Services Pricing</h1>
-    <p>Transparent rates for professional cleaning</p>
+    <h1>Transparent rates for professional cleaning</h1>
   </div>
 
   <div class="pricing-container">
@@ -260,36 +296,21 @@
   </div>
 
 
-<!-- FOOTER -->
-<footer>
-  <div>
-    <a href="#home"><img src="images\HCClogo.png" alt=""></a>
-    <h3>Hope Cleaning Co.</h3>
-    <p>Let's start a conversation</p>
-  </div>
-  <div class="contact-bottom">
-    <div>
-      <span class="material-symbols-outlined icon-style">call</span>
-      <p> +61 426-509-090</p>
+<section class="book-image">
+  
+    <div class="bk-image">
+    <img src="images/book.png">   
+     </div>
+    <div class="bk-cont">
+      <div>
+        <h1>Hope Cleaning Co</h1>
+        <h2>Reliable and detailed cleaning services designed to leave your space fresh, hygienic, and inspection-ready.</h2>
+      </div>
     </div>
-    <div>
-      <span class="material-symbols-outlined icon-style">mail</span>
-      <p> hopecleaningco88@gmail.com</p>
-    </div>
-    <div>
-      <span class="material-symbols-outlined">location_on</span>
-      <p> Ballarat, Victoria Australia</p>
-    </div>
-  </div>
-  <div>
-    <h4>Follow us on.</h4><br>
-    <p>
-      <a href="https://www.facebook.com/profile.php?id=61562716752062"><i class="fa-brands fa-facebook"></i>
-      </a><a><i class="fa-brands fa-facebook-messenger"></i></a>
-    </p><br>
-    <p>© 2026 Hope Cleaning Co. All Rights Reserved.</p>
-  </div>
-   <!-- Popup -->
+</section>
+<div style="display: flex; justify-content: center; padding: 20px 0 150px 0 ;"><a class="btn" id="bookBtn" style="width: 300px; text-align: center; font-size: 25px;">Book Now</a></div>
+
+<!-- Popup -->
   <div class="popup-overlay" id="popupOverlay">
     <div class="popup-box">
       <h2>Terms & Conditions</h2>
@@ -319,8 +340,44 @@
       </div>
     </div>
   </div>
-</footer>
+
+<!-- FOOTER -->
+<section id="contact-us" class="footer">
+  <div>
+    <a href="#home"><img src="images\HCClogo.png" alt=""></a>
+    <h3>Hope Cleaning Co.</h3>
+    <p>Let's start a conversation</p>
+  </div>
+  <div class="contact-bottom">
+    <div>
+      <span class="material-symbols-outlined icon-style">call</span>
+      <p> +61 426-509-090</p>
+    </div>
+    <div>
+      <span class="material-symbols-outlined icon-style">mail</span>
+      <p> hopecleaningco88@gmail.com</p>
+    </div>
+    <div>
+      <span class="material-symbols-outlined">location_on</span>
+      <p> Ballarat, Victoria Australia</p>
+    </div>
+  </div>
+  <div>
+    <h4>Follow us on.</h4><br>
+    <p>
+      <a href="https://www.facebook.com/profile.php?id=61562716752062"><i class="fa-brands fa-facebook"></i>
+      </a>
+      <a><i class="fa-brands fa-facebook-messenger"></i></a>
+      <a><i class="fa-brands fa-square-instagram"></i></a>
+      <a><i class="fa-brands fa-tiktok"></i></a>
+      <a><i class="fa-brands fa-google"></i></a>
+    </p><br>
+    <p>© 2026 Hope Cleaning Co. All Rights Reserved.</p>
+  </div>
+</section>
 </body>
+
+<script src="js\terms.js"></script>
 
 <script>
   //Menubar
@@ -339,9 +396,13 @@ document.querySelectorAll('section, .card, .two-col').forEach(el => {
   observer.observe(el);
 });
 </script>
+<!-------------------Scroll Animation--------------->
 
+
+<script src="js\ClientReviews.js"></script>
+<script src="js\gallery.js"></script>
 <script src="js\script.js"></script>
-<script src="js\terms.js"></script>
+
 
 <script>
   window.addEventListener("load", function () {
@@ -350,9 +411,8 @@ document.querySelectorAll('section, .card, .two-col').forEach(el => {
     // Delay slightly for smooth feel
     setTimeout(() => {
       loader.classList.add("hidden");
-    }, 3200);
+    }, 2200);
   });
 </script>
 
 </html>
-
