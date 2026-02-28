@@ -84,10 +84,10 @@
 
     .pricing-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
       gap: 20px;
       padding: 40px;
-      max-width: 1200px;
+      max-width: 1500px;
       margin: auto;
     }
 
@@ -121,6 +121,9 @@
     .card ul li {
       padding: 8px 0;
     }
+     li.square-bullet {
+  list-style-type: square;
+}
 
     .card ul li:last-child {
       border-bottom: none;
@@ -130,17 +133,7 @@
       font-weight: bold;
       color: #0F6E75;
     }
-
-    /* Responsive tweaks */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.5rem;
-      }
-      .card h2 {
-        font-size: 1.1rem;
-      }
-    }
-    .hero-pack {
+        .hero-pack {
   font-family: "Montserrat", sans-serif;
   align-content: center;
   justify-items: center;
@@ -170,24 +163,26 @@
   font-weight: 900;
 }
 
+
+    /* Responsive tweaks */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+      .card h2 {
+        font-size: 1.1rem;
+      }
+      .pricing-container {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      padding: 10px;
+    }
+    }
+
   </style>
 
 </head>
 
-
- <!--Loading Screen
-<div id="loader">
-  <div class="loader-container">
-    <img src="images\HCClogo.png" alt="Hope Cleaning Co Logo">
-    
-    <div class="buffer-bar">
-      <div class="buffer-progress"></div>
-    </div>
-  </div>
-</div>--> 
-
 <body>
-
 <!-- HEADER -->
 <header>
   <a href="#home"><img src="images\HCClogo.png" alt=""></a>
@@ -220,23 +215,86 @@
   </nav>
 </header>
 
+   <!-- sideBar-left-->
+  <div id="sidebar" class="sidebar">
+    <div class="quote-cont">
+      <form id="quoteForm">
+        <h2>Request a Quote</h2>
+        <label>Name</label>
+        <input type="text" name="name" placeholder="John Doe" required>
+        <label>Email Address</label>
+        <input type="email" name="email" placeholder="johndoe@gmail.com" required>
+        <label>Contact Number</label>
+        <input type="number" name="contact" placeholder="04xxxxxxxx" required>
+        
+        <!-- Dropdown -->
+        <label>Service</label>
+        <select id="serviceSelect" name="service" required>
+          <option value="">-- Please choose --</option>
+          <option value="Residential Cleaning">Residential Cleaning</option>
+          <option value="End of Lease Cleaning">End of Lease Cleaning</option>
+          <option value="Window Cleaning">Window Cleaning</option>
+          <option value="Office Cleaning">Office Cleaning</option>
+          <option value="Carpet Cleaning">Carpet Cleaning</option>
+          <option value="Oven Cleaning">Oven Cleaning</option>
+          <option value="Airbnb Cleaning">Airbnb Cleaning</option>
+          <option value="NDIS Cleaning">NDIS Cleaning</option>
+          <option value="Deep Cleaning">Deep Cleaning</option>
+          <option value="Other">Other</option>
+        </select>
+        <input type="text" id="customService" class="custom-input" placeholder="Enter custom service">
+
+        <label>Message</label>  
+        <textarea name="message" placeholder="Details" required></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <!-- Button is inside sidebar, moves with it -->
+    <button id="quoteBtn" class="quote-btn">Get A Quote Now</button>
+  </div>
+  </div>
+<script src="js/leftside.js"></script>
+
+
 <!-- HERO SECTION -->
 <section class="hero-pack">
   <h1>Cleaning Services Pricing</h1>
 </section>
 
 <!------------------Package------------->
+<!-- Sidebar -->
 
-  <div class="header">
-    <h1>Transparent rates for professional cleaning</h1>
-  </div>
-
+  <script src="js\leftside.js"></script>
   <div class="pricing-container">
 
     <!-- Regular Clean -->
     <div class="card">
       <h2>Regular Clean</h2>
       <ul>
+        <h3>Package Included</h3>
+      <ul>
+        <li class="square-bullet">Dust all accessible surfaces</li>
+        <li class="square-bullet">Dust furniture(nesseary)</li>
+        <li class="square-bullet">Vacuum carpets & rugs</li>
+        <li class="square-bullet">Mop hard floors</li>
+        <li class="square-bullet">Wipe and sanitise benchtops</li>
+        <li class="square-bullet">Clean stovetop</li>
+        <li class="square-bullet">Clean splashback</li>
+        <li class="square-bullet">Clean and polish sink & tapware</li>
+        <li class="square-bullet">Wipe cupboard doors (external)</li>
+        <li class="square-bullet">Wipe exterior of appliances (fridge, microwave, dishwasher)</li>
+        <li class="square-bullet">Vacuum/Mop floor</li>
+        <li class="square-bullet">Clean and disinfect toilet (inside & outside)</li>
+        <li class="square-bullet">Clean shower screens & bathtub</li>
+        <li class="square-bullet">Clean vanity & sink</li>
+        <li class="square-bullet">Polish mirrors</li>
+        <li class="square-bullet">Polish tapware</li>
+        <li class="square-bullet">Wipe tiles (light clean)</li>
+        <li class="square-bullet">Vacuum/Mop floors</li>
+        </ul> 
+        <hr>
+        <h3>Price</h3>
         <li>1–2 Bedrooms: Weekly <span class="highlight">$125</span> | Fortnightly <span class="highlight">$130</span></li>
         <li>3 Bedrooms: Weekly <span class="highlight">$145</span> | Fortnightly <span class="highlight">$155</span></li>
         <li>4 Bedrooms, 2 Bathrooms: Weekly <span class="highlight">$165</span> | Fortnightly <span class="highlight">$175</span></li>
@@ -250,10 +308,64 @@
     <div class="card">
       <h2>End of Lease Cleaning</h2>
       <ul>
+        <h3>Package Included</h3>
+        <ul>
+          <li class="square-bullet">Remove cobwebs from corners of rooms and ceilings</li>
+          <li class="square-bullet">Dust surfaces skirting boards</li>
+          <li class="square-bullet">Clean light switches/power points </li>
+          <li class="square-bullet">Wipe down kitchen benchtops & backsplash</li>
+          <li class="square-bullet">Clean and polish kitchen sink & stovetop</li>
+          <li class="square-bullet">Polish kitchen tapware</li>
+          <li class="square-bullet">Oven clean</li>
+          <li class="square-bullet">Rangehood</li>
+          <li class="square-bullet">Clean dishwasher</li>
+          <li class="square-bullet">Wipe down kitchen cupboards in/out and doorsClean cupboard pantry</li>
+          <li class="square-bullet">Bathroom-Clean bathroom mirrors, vanity top, bathtubs, toilet & shower</li>
+          <li class="square-bullet">Polish bathroom tapware</li>
+          <li class="square-bullet">Laundry - Wipe down benchtops and clean and polish sink & tapware</li>
+          <li class="square-bullet">Vacuum floors/Mop floors throughout the house</li>
+          <li class="square-bullet">Living Area</li>
+          <li class="square-bullet">Bedrooms -clean wardrobe, door frames</li>
+          <li class="square-bullet">Dust & wipe over fans or air-conditioned  filter</li>
+          <li class="square-bullet">Dust skirting boards & architraves</li>
+          <li class="square-bullet">Wall washing necessary /remove marks on the walls</li>
+          <li class="square-bullet">Clean windows, sills and tracks interior</li>
+        </ul>
+        <hr>
+        <h3>Price</h3>
         <li>1–2 Bedrooms, 1 Bathroom: <span class="highlight">$590</span></li>
         <li>3 Bedrooms, 1 Bathroom: <span class="highlight">$670</span></li>
         <li>4 Bedrooms, 2 Bathrooms: <span class="highlight">$710</span></li>
         <li>5 Bedrooms, 2 Bathrooms: <span class="highlight">$820</span></li>
+      </ul>
+    </div>
+
+    <!-- Deep Cleaning -->
+    <div class="card">
+      <h2>Carpet Cleaning</h2>
+      <ul>
+      <h3>Package Included</h3>
+        <ul>
+          <li class="square-bullet">Detailed dusting including skirting boards</li>
+          <li class="square-bullet">Remove cobwebs</li>
+          <li class="square-bullet">Clean doors, frames & switches</li>
+          <li class="square-bullet">Vacuum carpets & mop floors</li>
+          <li class="square-bullet">Clean stovetop & splashback</li>
+          <li class="square-bullet">Wipe cupboards (external)</li>
+          <li class="square-bullet">Clean sink & polish tapware</li>
+          <li class="square-bullet">Exterior appliance cleaning</li>
+          <li class="square-bullet">Deep clean shower & bathtub</li>
+          <li class="square-bullet">Scrub tiles & grout (light build-up)</li>
+          <li class="square-bullet">Clean toilet, vanity & mirrors</li>
+          <li class="square-bullet">Polish tapware</li>
+          <li class="square-bullet">Mop floor</li>
+        </ul>
+      <h3>Price</h3>
+      <li>1–2 Bedrooms, 1 Bathroom: <span class="highlight">$250</span></li>
+      <li>3 Bedrooms, 1 Bathroom: <span class="highlight">$300</span></li>
+      <li>3 Bedrooms, 2 Bathroom: <span class="highlight">$340</span></li>
+      <li>4 Bedrooms, 2 Bathrooms: <span class="highlight">$380</span></li>
+      <li>5 Bedrooms, 2 Bathrooms: <span class="highlight">$420</span></li>
       </ul>
     </div>
 
@@ -365,12 +477,10 @@
   <div>
     <h4>Follow us on.</h4><br>
     <p>
-      <a href="https://www.facebook.com/profile.php?id=61562716752062"><i class="fa-brands fa-facebook"></i>
-      </a>
-      <a><i class="fa-brands fa-facebook-messenger"></i></a>
-      <a><i class="fa-brands fa-square-instagram"></i></a>
-      <a><i class="fa-brands fa-tiktok"></i></a>
-      <a><i class="fa-brands fa-google"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=61562716752062"><i class="fa-brands fa-facebook"></i></a>
+      <a href=""><i class="fa-brands fa-square-instagram"></i></a>
+      <a href="https://www.tiktok.com/@hope.cleaning.co8?_r=1&_t=ZS-94EcHVZxuhI"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="https://share.google/uNcH9QMP8nZkOrgDI"><i class="fa-brands fa-google"></i></a>
     </p><br>
     <p>© 2026 Hope Cleaning Co. All Rights Reserved.</p>
   </div>
@@ -397,22 +507,5 @@ document.querySelectorAll('section, .card, .two-col').forEach(el => {
 });
 </script>
 <!-------------------Scroll Animation--------------->
-
-
-<script src="js\ClientReviews.js"></script>
-<script src="js\gallery.js"></script>
-<script src="js\script.js"></script>
-
-
-<script>
-  window.addEventListener("load", function () {
-    const loader = document.getElementById("loader");
-
-    // Delay slightly for smooth feel
-    setTimeout(() => {
-      loader.classList.add("hidden");
-    }, 2200);
-  });
-</script>
 
 </html>

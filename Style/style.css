@@ -112,9 +112,6 @@ color: #fff;}
 .home-service{
   background: url('../images/Services.png') center/cover no-repeat;
 }
-.home-booking{
-  background: url('../images/book01.png') center/cover no-repeat;
-}
 .hero::before{
   content: "";
   position: absolute;
@@ -166,34 +163,51 @@ color: #fff;}
   gap: 0;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05); 
 }
-.about .two-col img, .about .two-col div{
+.about .two-col .about-left, .about .two-col .about-right{
   display: inline-block;
   width: 100%;
   min-height: 70vh;
 }
-.about .two-col div{
+.about .two-col .about-left{
+  position: relative;
+  background: url('../images/About.png') center/cover no-repeat;
+  z-index: 1;
+}
+.about .two-col .about-left::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #adfbff;
+  background-size: cover;
+  z-index: -1;
+  opacity: 0.2;
+}
+.about .two-col .about-right{
   border: 3px solid #0f6e75;
 }
-.about .two-col div h2{
+.about .two-col .about-right h2{
   font-size: 15px;  
   text-align: left;
   color: #5a5a5a;
 }
-.about .two-col div h1{
+.about .two-col .about-right h1{
   font-size: 25px;
   text-align: left;
   padding-left: 30px;
   color: #0f6e75;
 }
 
-.about .two-col div h2, .about .two-col div p{
+.about .two-col .about-right h2, .about .two-col .about-right p{
   padding-top: 40px;
   padding-left: 30px;
 }
-.about .two-col div p{
+.about .two-col .about-right p{
   font-size: 17px;
 }
-.about .two-col div a{
+.about .two-col .about-right a{
   position: absolute;
   margin-left: 30px;
   bottom: 80px;
@@ -415,8 +429,16 @@ text-align: justify;
   }
     .review h2{
       padding-left: 40px;
-      color: #0F6E75;
-      font-weight: 600;
+      font-size: 15px;  
+      text-align: left;
+      color: #5a5a5a;
+    }
+    .review h1{
+      padding-left: 55px;
+      font-size: 25px;
+      text-align: left;
+      padding-left: 30px;
+      color: #0f6e75;
     }
     /* Review slider */
     .review .review-slider {
@@ -749,7 +771,7 @@ text-align: justify;
       background: #ddd;
     }
 
-
+    /*---------service post-------------*/
 /*------------------Service Post----------------*/
     .serv-post{
         position: relative;
@@ -841,3 +863,100 @@ text-align: justify;
 .book-image .bk-cont{
   width: 70%;
 }
+
+ /* Sidebar container */
+    .sidebar {
+      position: fixed;
+      left: -300px; /* hidden initially */
+      top: 0;
+      width: 300px;
+      height: 100%;
+      background: #f9f9f9;
+      border-right: 3px solid #00c4a7;
+      box-shadow: 4px 0 8px rgba(0,0,0,0.2);
+      transition: left 0.4s ease;
+      padding: 20px;
+      z-index: 999;
+    }
+
+    .sidebar.show {
+      left: 0; /* slide in */
+    }
+
+    .sidebar .quote-cont h2 {
+      color: #00c4a7;
+      margin-top: 0;
+    }
+
+    .sidebar input,
+    .sidebar textarea {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .sidebar button {
+      background: #00c4a7;
+      color: white;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .sidebar button:hover {
+      background: #00a68c;
+    }
+
+    /* Rotated menubar button that is part of sidebar */
+    .sidebar .quote-btn {
+      position: absolute;
+      top: 50%;
+      width: 150px;
+      right: -1px; /* sits outside sidebar edge */
+      transform: rotate(90deg) translateY(-50%);
+      font-weight: 700;
+      font-size: 15px;
+      transform-origin: right;
+      background: #00c4a7;
+      color: white;
+      padding: 8px 8px;
+      cursor: pointer;
+      border-radius: 5px 5px 0 0;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      transition: right 0.4s ease;
+    }
+    
+    .sidebar.show .quote-btn {
+      right: -1px; /* stays attached as sidebar slides */
+    }
+
+    .sidebar .quote-btn:hover {
+      background: #00a68c;
+    }
+
+    /* Dropdown + custom input styling */
+    select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #00c4a7;
+      border-radius: 4px;
+      font-size: 14px;
+      margin-bottom: 10px;
+      background: #e6fdf9;
+    }
+
+    .custom-input {
+      display: none; /* hidden until "Other" is chosen */
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #00c4a7;
+      border-radius: 4px;
+      font-size: 14px;
+      margin-bottom: 10px;
+      background: #f9fdfd;
+    }

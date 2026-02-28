@@ -116,6 +116,46 @@
 
   </nav>
 </header>
+<!-- sideBar-left-->
+  <div id="sidebar" class="sidebar">
+    <div class="quote-cont">
+      <form id="quoteForm">
+        <h2>Request a Quote</h2>
+        <label>Name</label>
+        <input type="text" name="name" placeholder="John Doe" required>
+        <label>Email Address</label>
+        <input type="email" name="email" placeholder="johndoe@gmail.com" required>
+        <label>Contact Number</label>
+        <input type="number" name="contact" placeholder="04xxxxxxxx" required>
+        
+        <!-- Dropdown -->
+        <label>Service</label>
+        <select id="serviceSelect" name="service" required>
+          <option value="">-- Please choose --</option>
+          <option value="Residential Cleaning">Residential Cleaning</option>
+          <option value="End of Lease Cleaning">End of Lease Cleaning</option>
+          <option value="Window Cleaning">Window Cleaning</option>
+          <option value="Office Cleaning">Office Cleaning</option>
+          <option value="Carpet Cleaning">Carpet Cleaning</option>
+          <option value="Oven Cleaning">Oven Cleaning</option>
+          <option value="Airbnb Cleaning">Airbnb Cleaning</option>
+          <option value="NDIS Cleaning">NDIS Cleaning</option>
+          <option value="Deep Cleaning">Deep Cleaning</option>
+          <option value="Other">Other</option>
+        </select>
+        <input type="text" id="customService" class="custom-input" placeholder="Enter custom service">
+
+        <label>Message</label>  
+        <textarea name="message" placeholder="Details" required></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <!-- Button is inside sidebar, moves with it -->
+    <button id="quoteBtn" class="quote-btn">Get A Quote Now</button>
+  </div>
+  </div>
+<script src="js/leftside.js"></script>
 
 <!-- HERO SECTION -->
 <section class="hero home-service" id="home">
@@ -213,6 +253,7 @@
 <!-- Client Review -->
 <section id="reviews" class="review">
   <h2>Client Reviews</h2>
+  <h1>"Hear the Honest Feedback from Our Valued and Satisfied Customers"</h1>
   <div class="review-slider">
     <div class="review-track" id="review-track"></div>
     <button class="nav-btn left" onclick="prevSlide()">&#10094;</button>
@@ -324,12 +365,10 @@
   <div>
     <h4>Follow us on.</h4><br>
     <p>
-      <a href="https://www.facebook.com/profile.php?id=61562716752062"><i class="fa-brands fa-facebook"></i>
-      </a>
-      <a><i class="fa-brands fa-facebook-messenger"></i></a>
-      <a><i class="fa-brands fa-square-instagram"></i></a>
-      <a><i class="fa-brands fa-tiktok"></i></a>
-      <a><i class="fa-brands fa-google"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=61562716752062"><i class="fa-brands fa-facebook"></i></a>
+      <a href=""><i class="fa-brands fa-square-instagram"></i></a>
+      <a href="https://www.tiktok.com/@hope.cleaning.co8?_r=1&_t=ZS-94EcHVZxuhI"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="https://share.google/uNcH9QMP8nZkOrgDI"><i class="fa-brands fa-google"></i></a>
     </p><br>
     <p>© 2026 Hope Cleaning Co. All Rights Reserved.</p>
   </div>
