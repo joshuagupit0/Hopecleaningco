@@ -1,16 +1,14 @@
-const bookBtn = document.getElementById("bookBtn");
-const bookBtn1 = document.getElementById("bookBtn1");
+
     const popupOverlay = document.getElementById("popupOverlay");
     const acceptBtn = document.getElementById("acceptBtn");
     const declineBtn = document.getElementById("declineBtn");
 
-    // Show popup when booking button is clicked
-    bookBtn.addEventListener("click", () => {
+    //Pop-terms
+    document.addEventListener("click", function(event) {
+    if (event.target.id === "bookBtn" || event.target.id === "bookBtn1" || event.target.id === "bookBtn2") {
       popupOverlay.style.display = "flex";
-    });
-    bookBtn1.addEventListener("click", () => {
-      popupOverlay.style.display = "flex";
-    });
+    }
+  });
 
     // Accept terms
     acceptBtn.addEventListener("click", () => {
@@ -23,4 +21,5 @@ const bookBtn1 = document.getElementById("bookBtn1");
     declineBtn.addEventListener("click", () => {
       popupOverlay.style.display = "none";
       alert("You must accept the Terms to proceed.");
+
     });
