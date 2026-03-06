@@ -86,34 +86,45 @@
 <body>
 
 <!-- HEADER -->
+<div class="bus-hour">
+  <span class="material-symbols-outlined">business_center</span>
+      <p>Business Hours: Monday to Friday 8AM-5PM</p></div>
 <header>
   <a href="#home"><img src="images\HCClogo.png" alt=""></a>
   <!-- Hamburger Menu Button -->
+   <div class="menu-cont">
+  <div class="pop-nav bg1"><a href="index.html#home" class="btn-contact"><i class="fa-regular fa-house"></i></a></div>
+  <div class="pop-nav bg2"><a href="#contact-us" class="btn-contact"><i class="fa-solid fa-phone"></i></a></div>
+  <div class="pop-nav bg3"><a class="btn-nav" id="bookBtn">Book Now</a></div>
   <button class="menu-toggle" id="menu-toggle">
     <span class="material-symbols-outlined">menu</span>
   </button>
-
+  </div>
   <nav id="nav">
-    <a href="index.html" class="nav-link active">Home</a>
+    <a href="index.html#home" class="nav-link active hide">Home</a>
     <a href="index.html#about" class="nav-link">About Us</a>
     <a href="service.html" class="nav-link">Services</a>
     <a href="package.html" class="nav-link">Pricing</a>
-    <a href="index.html#reviews" class="nav-link">Reviews</a>
-    <a href="index.html#gallery" class="nav-link">Gallery</a>
-    <a href="#contact-us" class="nav-link">Contact Us</a>
-    <a class="btn" id="bookBtn1">Book Now</a>
+    <a href="#reviews" class="nav-link">Reviews</a>
+    <a href="#gallery" class="nav-link">Gallery</a>
+    <a href="#contact-us" class="nav-link hide">Contact Us</a>
+    <a href="#contact-us" class="nav-link show"><i class="fa-solid fa-phone"></i></a>
+    <a class="btn" id="bookBtn">Book Now</a>
 
     <div class="contact-top">
-    <div>
+      <div>
+      <span class="material-symbols-outlined">business_center</span>
+      <p>Monday to Friday 8AM-5PM</p>
+    </div>
+    <div class="contact-hide">
       <span class="material-symbols-outlined icon-style">call</span>
       <p>+61 426-509-090</p>
     </div>
-    <div>
+    <div class="contact-hide">
       <span class="material-symbols-outlined icon-style">mail</span>
       <p>hopecleaningco88@gmail.com</p>
     </div>
   </div>
-
   </nav>
 </header>
 <!-- SECTION Post-->
@@ -207,6 +218,10 @@
     <div>
       <span class="material-symbols-outlined">location_on</span>
       <p> Ballarat, Victoria Australia</p>
+      <div>
+      <span class="material-symbols-outlined">receipt_long</span>
+      <p>ABN: 34 634 591 038</p>
+    </div>
     </div>
   </div>
   <div>
