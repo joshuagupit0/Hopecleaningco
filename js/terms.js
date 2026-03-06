@@ -21,5 +21,4 @@
     declineBtn.addEventListener("click", () => {
       popupOverlay.style.display = "none";
       alert("You must accept the Terms to proceed.");
-
     });
