@@ -38,7 +38,7 @@
       data.set('service', selectedService); // overwrite service with custom if needed
 
       // Send to Google Apps Script
-      fetch('https://script.google.com/macros/s/AKfycbyZ5FjfvOaSWjQOcM3Ttdb1L9IL7m1UEw_w9daELRIWZvzv_lhMrNIx_ECSQZ7ITUZYRQ/exec', {
+      fetch('https://script.google.com/macros/s/AKfycbxHuiOH7As4nGhOcNFCF4VeXZA3YQ_U6mCNC7_o-6SwbWaBaJXtauLPzTPoPUQQPsXt/exec', {
         method: 'POST',
         body: data
       })
@@ -49,4 +49,5 @@
         sidebar.classList.remove('show'); // Close sidebar
       })
       .catch(err => alert('Error: ' + err));
+
     });
