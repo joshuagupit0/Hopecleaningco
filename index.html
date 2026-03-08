@@ -171,7 +171,7 @@
 <!-- HERO SECTION -->
 <section class="hero home" id="home">
   <div class="hero-content">
-    <h1>Professional Cleaning You Can Trust</h1>
+    <h1 class="hero-title">Professional Cleaning You Can Trust</h1>
     <p>Hope Cleaning Co provides reliable residential and commercial cleaning services across Ballarat, Victoria and surrounding areas. We deliver spotless results with care and attention to detail.</p>
     <a class="btn" id="bookBtn1">Book Now</a>
   </div>
@@ -188,7 +188,7 @@
       <p>Hope Cleaning Co is a locally owned and operated cleaning business committed to providing high-quality, reliable, and affordable cleaning services.
 
 With over years of experience, we understand how important a clean home or workspace is for your comfort, health, and peace of mind. Our trained and trustworthy team takes pride in delivering detailed cleaning with a personal touch.
-We treat every home like our own — with respect, care, and professionalism.
+We treat every home like our own with respect, care, and professionalism.
 </p>
       <!--<a class="btn">Learn more</a>-->
     </div>
@@ -413,6 +413,7 @@ document.getElementById("menu-toggle").addEventListener("click", function () {
   document.getElementById("nav").classList.toggle("show");
 });
 
+//Fade In Section 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if(entry.isIntersecting) entry.target.classList.add('show');

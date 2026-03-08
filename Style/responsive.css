@@ -9,6 +9,19 @@
       display: none;
     }
 }
+@media (max-width: 1200px){
+
+  /*------------Package Page-----------*/
+  .table .table-cont h2{
+    margin-bottom: 10px;
+    text-align: center;
+    width: 100%;
+  }
+  .table .table-cont table{
+    min-width: 300px;
+    width: 100%;
+  }
+}
 @media (max-width: 1110px){
   /*-------------Header---------*/
   nav {
@@ -22,7 +35,21 @@
     width: 300px;
     height: 600px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 1;
+
   }
+  nav::before {
+    display: none; /* hide nav links */
+    position: absolute;
+    top: 80px; /* adjust based on header height */
+    right: 10px;
+    padding: 15px;
+    width: 100%;
+    height: 600px;
+    z-index: -1;
+    background-color: #fff;
+  }
+ 
   .head-marg{
   top: 25px;
 }
@@ -94,10 +121,10 @@
         width: 400px;
     }
     .hero .hero-content h1 {
-        font-size: 35px;
+        font-size: 50px;
     }
     .hero .hero-content p{
-        font-size: 13px;
+        font-size: 18px;
     }
     /*--------------Package-----------*/
 
@@ -157,6 +184,19 @@
 .serv-detail{
     position: relative;
     padding: 50px 50px;
+}
+}
+@media(max-width: 740px){
+.table-hide{
+  display: none;}
+.table-show{
+  display: block;
+}
+.pack-sub{
+  font-size: 30px;
+}
+.table .table-cont h2{
+  font-size: 25px;
 }
 }
 @media(max-width: 540px){
@@ -231,7 +271,7 @@
         font-size: 20px;
     }
     .hero .hero-content p{
-        font-size: 11px;
+        font-size: 10px;
     }
     /*--------Services----------*/
  .serv-con { 
@@ -267,7 +307,28 @@
     }
 
 }
+@media(max-width: 460px){
+  /*--------package page-------------*/
+  .table{
+    padding: 30px 10px;
 
+  }
+  .pack-sub{
+    font-size: 20px;
+  }
+  .table-card{
+    width: 100%;
+  }
+  .table .table-cont{
+  padding: 20px 5px;
+}
+.table .table-cont table, .table .table-cont div{
+  font-size: 12px;
+}
+.package-cont{
+  padding: 30px 10px;
+}
+}
 @media(max-width: 410px){
      header .menu-cont .pop-nav a, header .menu-cont .menu-toggle,  header .menu-cont .pop-nav .btn-nav{
       min-width: 50px;

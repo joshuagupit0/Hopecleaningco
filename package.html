@@ -82,57 +82,7 @@
       font-size: 2rem;
     }
 
-    .pricing-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      gap: 20px;
-      padding: 40px;
-      max-width: 1500px;
-      margin: auto;
-    }
-
-    .card {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      overflow: hidden;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-
-    .card h2 {
-      background: #0F6E75;
-      color: #fff;
-      margin: 0;
-      padding: 15px;
-      font-size: 1.3rem;
-    }
-
-    .card ul {
-      list-style: none;
-      margin: 0;
-      padding: 20px;
-    }
-
-    .card ul li {
-      padding: 8px 0;
-    }
-     li.square-bullet {
-  list-style-type: square;
-}
-
-    .card ul li:last-child {
-      border-bottom: none;
-    }
-
-    .highlight {
-      font-weight: bold;
-      color: #0F6E75;
-    }
+    
         .hero-pack {
   font-family: "Montserrat", sans-serif;
   align-content: center;
@@ -156,12 +106,38 @@
   background-color: #adfbff;
   background-size: cover;
   z-index: -1;
-  opacity: 0.4;
+  opacity: 0.1;
 }
 .hero-pack h1{
-  font-size: 45px;
-  font-weight: 900;
+  font-size: 70px;
+  font-weight: 800;
+  color: #f5f5f5;
+  text-shadow:
+    1px 1px 1px #919191,
+    1px 2px 1px #919191,
+    1px 3px 1px #919191,
+    1px 4px 1px #919191,
+    1px 5px 1px #919191,
+    1px 6px 1px #919191,
+    1px 7px 1px #919191,
+    1px 8px 1px #919191,
+    1px 9px 1px #919191,
+    1px 10px 1px #919191, /* The "depth" shadows */
+    1px 10px 1px rgba(16, 16, 16, 0.4); /* The main drop shadow for extra depth */
 }
+@media (max-width: 740px){
+  .hero-pack h1{
+    font-size: 50px;
+    text-shadow:
+   
+    1px 1px 1px #919191,
+    1px 2px 1px #919191,
+    1px 3px 1px #919191,
+    1px 4px 1px #919191,
+    1px 5px 1px #919191, /* The "depth" shadows */
+    1px 6px 1px rgba(16, 16, 16, 0.4); /* The main drop shadow for extra depth */
+    }
+  }
 
 
     /* Responsive tweaks */
@@ -177,7 +153,6 @@
       padding: 10px;
     }
     }
-
   </style>
 
 </head>
@@ -276,12 +251,339 @@
 
 <!------------------Package------------->
 <!-- Sidebar -->
+ <h1 class="pack-sub">HOPE CLEANING CO<br>SIGNATURE COLLECTION<br>All Pricing Includes GST</h1>
+ <!-- ----------Table--------------- -->
+ <section class="table" id="table">
+  <div class="table-cont">
+    <!-- Regular Price-->
+    <h2>Set Priced Cleans</h2>
+    <table class="table-hide">
+      <tr class="tr-bg">
+        <th>Bedrooms</th>
+        <th>Signature <br>Maintenance <br>Clean </th>
+        <th>Deep Clean</th>
+        <th>End of Lease</th>
+      </tr>
+      <tr>
+        <td>1–2 BEDROOMS | 1 BATHROOM</td>
+        <td>$140</td>
+        <td>$300</td>
+        <td>$590</td>
+      </tr>
+      <tr>
+        <td>3 BEDROOMS | 1 BATHROOM</td>
+        <td>$170</td>
+        <td>$380</td>
+        <td>$670</td>
+      </tr>
+      <tr>
+        <td>4 BEDROOMS | 2 BATHROOMs</td>
+        <td>$205</td>
+        <td>$460</td>
+        <td>$770</td>
+      </tr>
+      <tr>
+        <td>5 BEDROOMS | 2 BATHROOMs</td>
+        <td>$235</td>
+        <td>$540</td>
+        <td>$825</td>
+      </tr>
+    </table>
+    <div class="table-card table-show">
+      <table>
+        <tr class="tr-bg">
+          <th>Services</th>
+          <th>1–2 BEDROOMS<br>1 BATHROOM</th>
+        </tr>
+        <tr>
+          <td>Signature <br>Maintenance <br>Clean </td>
+          <td>$140</td>
+        </tr>
+        <tr>
+          <td>Deep Cleaning</td>
+          <td>$300</td>
+        </tr>
+        <tr>
+          <td>End Lease Cleaning</td>
+          <td>$590</td>
+        </tr>
+      </table>
+    </div>
+    <div class="table-card table-show">
+      <table>
+        <tr class="tr-bg">
+          <th>Bedrooms</th>
+          <th>3 BEDROOMS<br>1 BATHROOM</th>
+        </tr>
+        <tr>
+          <td>Signature <br>Maintenance <br>Clean </td>
+          <td>$170</td>
+        </tr>
+        <tr>
+          <td>Deep Cleaning</td>
+          <td>$380</td>
+        </tr>
+        <tr>
+          <td>End Lease Cleaning</td>
+          <td>$670</td>
+        </tr>
+      </table>
+    </div>
+    <div class="table-card table-show">
+      <table>
+        <tr class="tr-bg">
+          <th>Bedrooms</th>
+          <th>4 BEDROOMS<br>2 BATHROOM</th>
+        </tr>
+        <tr>
+          <td>Signature <br>Maintenance <br>Clean </td>
+          <td>$205</td>
+        </tr>
+        <tr>
+          <td>Deep Cleaning</td>
+          <td>$460</td>
+        </tr>
+        <tr>
+          <td>End Lease Cleaning</td>
+          <td>$770</td>
+        </tr>
+      </table>
+    </div>
+    <div class="table-card table-show">
+      <table>
+        <tr class="tr-bg">
+          <th>Bedrooms</th>
+          <th>5 BEDROOMS<br>2 BATHROOM</th>
+        </tr>
+        <tr>
+          <td>Signature <br>Maintenance <br>Clean </td>
+          <td>$235</td>
+        </tr>
+        <tr>
+          <td>Deep Cleaning</td>
+          <td>$540</td>
+        </tr>
+        <tr>
+          <td>End Lease Cleaning</td>
+          <td>$825</td>
+        </tr>
+      </table>
+    </div>
+    <!--Adds On-->
+    <h2>Adds-Ons</h2>
+    <table class="table-hide">
+      <tr class="tr-bg">
+        <th style="width: 60%;">Services</th>
+        <th>Price</th>
+      </tr>
+      <tr>
+        <td>Carpet Clean</td>
+        <td>$55<br>(good condition for End of lease)</td>
+
+      </tr>
+      <tr>
+        <td>Bathroom</td>
+        <td>$55</td>
+
+      </tr>
+      <tr>
+        <td>Powder Room</td>
+        <td>$20</td>
+      </tr>
+    </table>
+    <div class="table-card table-show">
+      <table>
+        <tr class="tr-bg">
+        <th style="width: 60%;">Services</th>
+        <th>Price</th>
+      </tr>
+      <tr>
+        <td>Carpet Clean</td>
+        <td>$55<br>(good condition for End of lease)</td>
+
+      </tr>
+      <tr>
+        <td>Bathroom</td>
+        <td>$55</td>
+
+      </tr>
+      <tr>
+        <td>Powder Room</td>
+        <td>$20</td>
+      </tr>
+      </table>
+    </div>
+    <!--Other Services-->
+    <h2>Other Services</h2>
+    <table class="table-hide">
+      <tr class="tr-bg">
+        <th></th>
+        <th>Carpet Cleaning</th>
+        <th>Window Cleaning</th>
+      </tr>
+      <tr>
+        <td>1–2 BEDROOMS</td>
+        <td>$120</td>
+        <td>$150</td>
+      </tr>
+      <tr>
+        <td>3 BEDROOMS</td>
+        <td>$135</td>
+        <td>$220</td>
+      </tr>
+      <tr>
+        <td>4 BEDROOMS</td>
+        <td>$150</td>
+        <td>$260</td>
+      </tr>
+      <tr class="td-border">
+        <td>5 BEDROOMS</td>
+        <td>$185</td>
+        <td>$330</td>
+      </tr>
+      <tr>
+        <td class="td-relative" colspan="3"><p>Extra</p></td>
+      </tr>
+     <style>
+      .td-border{
+
+        position: relative;
+        border-bottom: 2px dashed #ddd;
+      }.td-relative{
+        display: flex;
+        width: 100%;
+        text-align: center;
+        margin-top: -26px;
+        margin-left: 70%;
+      }
+      .td-relative p{
+        font-size: 20px;
+        font-weight: 900;
+      }
+     </style>
+      <tr style="padding-top: 10px;">
+        <td>Flea Treatments</td>
+        <td>$35</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>Windowsills</td>
+        <td>-</td>
+        <td>$45</td>
+        <tr>
+        <td>Window Tracks</td>
+        <td>-</td>
+        <td>$80</td>
+      <tr class="tr-bg">
+        <th style="width: 60%;">Size</th>
+        <th colspan="2">Oven Cleaning</th>
+      </tr>
+      <tr>
+        <td>600mm Oven</td>
+        <td>$160</td>
+      </tr>
+      <tr>
+        <td>900mm Oven</td>
+        <td>$185</td>
+      </tr>
+      <tr>
+        <td>Double Oven</td>
+        <td>$250</td>
+      </tr>
+    </table>
+    <div class="table-card table-show">
+      <table>
+        <tr class="tr-bg">
+        <th style="width: 60%;">Service</th>
+        <th>1–2 BEDROOMS</th>
+      </tr>
+      <tr>
+        <td>Carpet Cleaning</td>
+        <td>$120</td>
+      </tr>
+      <tr>
+        <td>Window Cleaning</td>
+        <td>$150</td>
+      </tr>
+      <tr class="tr-bg">
+        <th style="width: 60%;">Service</th>
+        <th>3 BEDROOMS</th>
+      </tr>
+      <tr>
+        <td>Carpet Cleaning</td>
+        <td>$135</td>
+      </tr>
+      <tr>
+        <td>Window Cleaning</td>
+        <td>$220</td>
+      </tr>
+      <tr class="tr-bg">
+        <th style="width: 60%;">Service</th>
+        <th>4 BEDROOMS</th>
+      </tr>
+      <tr>
+        <td>Carpet Cleaning</td>
+        <td>$150</td>
+      </tr>
+      <tr>
+        <td>Window Cleaning</td>
+        <td>$260</td>
+      </tr>
+      <tr class="tr-bg">
+        <th style="width: 60%;">Service</th>
+        <th>5 BEDROOMS</th>
+      </tr>
+      <tr>
+        <td>Carpet Cleaning</td>
+        <td>$185</td>
+      </tr>
+      <tr>
+        <td>Window Cleaning</td>
+        <td>$330</td>
+      </tr>
+       <tr class="tr-bg">
+        <th style="text-align: center;" colspan="3">EXTRA</th>
+      </tr>
+      <tr>
+        <td>Flea Treatments<br>(Carpet)</td>
+        <td>$35</td>
+      </tr>
+      <tr>
+        <td>Windowsills<br>(Window)</td>
+        <td>$45</td>
+      </tr>
+      <tr>
+        <td>Window Tracks<br>(Window)</td>
+        <td>$80</td>
+      </tr>
+      <tr class="tr-bg">
+        <th style="width: 60%;">size</th>
+        <th>Oven Cleaning</th>
+      </tr>
+      <tr>
+        <td>600mm Oven</td>
+        <td>$160</td>
+      </tr>
+      <tr>
+        <td>900mm Oven</td>
+        <td>$185</td>
+      </tr>
+      <tr>
+        <td>Double Oven</td>
+        <td>$250</td>
+      </tr>
+      </table>
+    </div>
+  </div>
+ </section>
+ <section class="package-cont">
+<h1 class="pack-sub">Package Included</h1>
 
   <script src="js\leftside.js"></script>
   <div class="pricing-container">
 
     <!-- Regular Clean -->
-    <div class="card">
+    <div class="pack-card">
       <h2>Regular Clean</h2>
       <ul>
         <h3>Package Included</h3>
@@ -305,21 +607,11 @@
         <li class="square-bullet">Wipe tiles (light clean)</li>
         <li class="square-bullet">Vacuum/Mop floors</li>
         </ul> 
-        <hr>
-        <h3>Price</h3>
-        <li>1–2 Bedrooms: Weekly <span class="highlight">$125</span> | Fortnightly <span class="highlight">$130</span></li>
-        <li>3 Bedrooms: Weekly <span class="highlight">$145</span> | Fortnightly <span class="highlight">$155</span></li>
-        <li>4 Bedrooms, 2 Bathrooms: Weekly <span class="highlight">$165</span> | Fortnightly <span class="highlight">$175</span></li>
-        <li>5 Bedrooms, 2 Bathrooms: Weekly <span class="highlight">$220</span> | Fortnightly <span class="highlight">$225</span></li>
-        <li>Extra Bathroom: <span class="highlight">$35</span></li>
-        <li>Extra Powder Room: <span class="highlight">$15</span></li>
-        <hr>
-        <li></li>
       </ul>
     </div>
 
     <!-- End of Lease Cleaning -->
-    <div class="card">
+    <div class="pack-card">
       <h2>End of Lease Cleaning</h2>
       <ul>
         <h3>Package Included</h3>
@@ -344,18 +636,12 @@
           <li class="square-bullet">Dust skirting boards & architraves</li>
           <li class="square-bullet">Wall washing necessary /remove marks on the walls</li>
           <li class="square-bullet">Clean windows, sills and tracks interior</li>
-        </ul>
-        <hr>
-        <h3>Price</h3>
-        <li>1–2 Bedrooms, 1 Bathroom: <span class="highlight">$590</span></li>
-        <li>3 Bedrooms, 1 Bathroom: <span class="highlight">$670</span></li>
-        <li>4 Bedrooms, 2 Bathrooms: <span class="highlight">$710</span></li>
-        <li>5 Bedrooms, 2 Bathrooms: <span class="highlight">$820</span></li>
+          </ul>
       </ul>
     </div>
 
     <!-- Deep Cleaning -->
-    <div class="card">
+    <div class="pack-card">
       <h2>Deep Cleaning</h2>
       <ul>
       <h3>Package Included</h3>
@@ -374,53 +660,10 @@
           <li class="square-bullet">Polish tapware</li>
           <li class="square-bullet">Mop floor</li>
         </ul>
-        <hr>
-      <h3>Price</h3>
-      <li>1–2 Bedrooms, 1 Bathroom: <span class="highlight">$250</span></li>
-      <li>3 Bedrooms, 1 Bathroom: <span class="highlight">$300</span></li>
-      <li>3 Bedrooms, 2 Bathroom: <span class="highlight">$340</span></li>
-      <li>4 Bedrooms, 2 Bathrooms: <span class="highlight">$380</span></li>
-      <li>5 Bedrooms, 2 Bathrooms: <span class="highlight">$420</span></li>
       </ul>
     </div>
-
-    <!-- Carpet Cleaning -->
-    <div class="card">
-      <h2>Carpet Cleaning</h2>
-      <ul>
-        <li>1–2 Bedrooms: <span class="highlight">$120</span></li>
-        <li>3 Bedrooms: <span class="highlight">$135</span></li>
-        <li>4 Bedrooms: <span class="highlight">$150</span></li>
-        <li>5 Bedrooms: <span class="highlight">$185</span></li>
-        <li>Flea Treatment: <span class="highlight">$35</span></li>
-      </ul>
-    </div>
-
-    <!-- Oven Cleaning -->
-    <div class="card">
-      <h2>Oven Cleaning</h2>
-      <ul>
-        <li>600mm Oven: <span class="highlight">$160</span></li>
-        <li>900mm Oven: <span class="highlight">$185</span></li>
-        <li>Double Oven: <span class="highlight">$250</span></li>
-      </ul>
-    </div>
-
-    <!-- Window Cleaning -->
-    <div class="card">
-      <h2>Window Cleaning</h2>
-      <ul>
-        <li>1–2 Bedrooms: <span class="highlight">$150</span></li>
-        <li>3 Bedrooms: <span class="highlight">$220</span></li>
-        <li>4 Bedrooms: <span class="highlight">$260</span></li>
-        <li>5 Bedrooms: <span class="highlight">$330</span></li>
-        <li>Windowsills: <span class="highlight">$45</span></li>
-        <li>Window Tracks: <span class="highlight">$80</span></li>
-        <li><em>Custom quote available</em></li>
-      </ul>
-    </div>
-
   </div>
+  </section>
 
 
 <section class="book-image">
