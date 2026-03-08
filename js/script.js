@@ -1,5 +1,5 @@
 // --------------------- Variables ---------------------
-const REVIEW_API = "https://script.google.com/macros/s/AKfycbz8Uq7Ygahii9HEINmVg5-A3ZieZqKLNq9BSJf8s8rlr0LcqJ0AJl-TmBv2T53jij_lXA/exec";
+const REVIEW_API = "https://script.google.com/macros/s/AKfycbzNq7nIFgth2BNX-YBCUHaFMR52-XGycivhE4REJdl4vqfukZ888TkE81XPgGP9jfo/exec";
 const reviewList = document.getElementById("reviewsList");
 const extraReviewsDiv = document.getElementById("extraReviews");
 const toggleBtn = document.getElementById("toggleReviews");
@@ -77,4 +77,5 @@ document.getElementById("reviewForm").addEventListener("submit", async e => {
 
 // Load reviews initially
 loadReviews();
+
 
