@@ -1,4 +1,4 @@
-const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzNq7nIFgth2BNX-YBCUHaFMR52-XGycivhE4REJdl4vqfukZ888TkE81XPgGP9jfo/exec"; // Replace with your Apps Script URL
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxHuiOH7As4nGhOcNFCF4VeXZA3YQ_U6mCNC7_o-6SwbWaBaJXtauLPzTPoPUQQPsXt/exec"; // Replace with your Apps Script URL
     const track = document.getElementById("review-track");
     let clients = [];
     let index = 0;
@@ -123,3 +123,4 @@ const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzNq7nIFgth2BNX-YBC
     // Load reviews on page load
 
     loadReviews();
+
