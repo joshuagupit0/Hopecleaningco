@@ -121,6 +121,4 @@ const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxHuiOH7As4nGhOcNFC
     }
 
     // Load reviews on page load
-
     loadReviews();
-

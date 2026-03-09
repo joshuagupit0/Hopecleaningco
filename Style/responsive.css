@@ -14,8 +14,9 @@
   /*------------Package Page-----------*/
   .table .table-cont h2{
     margin-bottom: 10px;
-    text-align: center;
+    text-align: left;
     width: 100%;
+    text-decoration: underline;
   }
   .table .table-cont table{
     min-width: 300px;
@@ -196,8 +197,15 @@
   font-size: 30px;
 }
 .table .table-cont h2{
-  font-size: 25px;
+  font-size: 30px;
 }
+.table .table-cont table th {
+  padding: 10px 0 px 10px;
+}
+.table .table-cont table td{
+  padding: 10px 0 10px 10px;
+}
+
 }
 @media(max-width: 540px){
     /*------------Hero----------------*/
@@ -308,6 +316,13 @@
 
 }
 @media(max-width: 460px){
+  /*------------About Us----------*/
+  .about .two-col .about-right p{
+    font-size: 10px;
+  }
+  .about{
+  padding: 40px 10px;
+}
   /*--------package page-------------*/
   .table{
     padding: 30px 10px;

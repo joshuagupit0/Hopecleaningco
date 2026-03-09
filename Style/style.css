@@ -203,20 +203,22 @@ color: #fff;}
 /*About*/
 .about{
   position: relative;
-  padding: 150px 15%;
+  padding: 50px 8%;
+  background-color: #fff;
 }
 .about .two-col {   
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px,1fr)); 
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); 
   gap: 0;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05); 
 }
-.about .two-col .about-left, .about .two-col .about-right{
+.about .two-col .about-left .about .two-col .about-right{
   display: inline-block;
-  width: 100%;
+  min-width: 300px;
   min-height: 70vh;
 }
 .about .two-col .about-left{
+  width: 100%;
   position: relative;
   background: url('../images/About.png') center/cover no-repeat;
   z-index: 1;
@@ -234,7 +236,9 @@ color: #fff;}
   opacity: 0.2;
 }
 .about .two-col .about-right{
+  width: 100%;
   border: 3px solid #0f6e75;
+  background-color: #fff;
 }
 .about .two-col .about-right h2{
   font-size: 15px;  
@@ -248,12 +252,14 @@ color: #fff;}
   color: #0f6e75;
 }
 
-.about .two-col .about-right h2, .about .two-col .about-right p{
-  padding-top: 40px;
+.about .two-col .about-right h2{
+  padding-top: 20px;
   padding-left: 30px;
 }
 .about .two-col .about-right p{
-  font-size: 17px;
+  font-size: 13px;
+  padding-left: 30px;
+  padding-bottom: 20px;
 }
 .about .two-col .about-right a{
   position: absolute;
@@ -488,9 +494,9 @@ text-align: justify;
   padding: 10px 0 20px 10px;
 }
 .table .table-cont h2{
-  font-weight: 800;
   font-size: 35px;
   color: #0F6E75;
+  font-style: inherit;
 }
 .table-card{
   display: none;
