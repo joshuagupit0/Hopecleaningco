@@ -323,6 +323,13 @@
   .about{
   padding: 40px 10px;
 }
+/*------sidebar-left*/
+.sidebar .quote-btn {
+      font-weight: 700;
+      font-size: 13px;
+      padding: 2.5px 5px;
+
+    }
   /*--------package page-------------*/
   .table{
     padding: 30px 10px;
