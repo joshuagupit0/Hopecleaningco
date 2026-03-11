@@ -38,7 +38,7 @@
       data.set('service', selectedService); // overwrite service with custom if needed
 
       // Send to Google Apps Script
-      fetch('https://script.google.com/macros/s/AKfycbycm08p9RGpN9bEDsGof52_LfnCNPrNwN0ZgpQX-t8IWchoI0W_PKbc8uv9lOtHtSDg0A/exec', {
+      fetch('https://script.google.com/macros/s/AKfycbyA4zN31Ix2XA9d2BDLavBRewC4TwTassQVrM1ZknRr4e18w73iFj6EJZjKHi--LpInug/exec', {
         method: 'POST',
         body: data
       })
