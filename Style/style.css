@@ -597,7 +597,7 @@ text-align: justify;
       transition: transform 0.6s ease;
     }
     .review .review-slider .review-track .review-card {
-      min-width: 380px;
+      min-width: 310px;
       margin: 10px;
       padding: 20px;
       border-radius: 10px;
@@ -642,7 +642,8 @@ text-align: justify;
       color: #333; }
     .nav-btn {
       position: absolute; 
-      top: 50%; transform: translateY(-50%);
+      top: 50%; 
+      transform: translateY(-50%);
       background: rgba(0,0,0,0.5); 
       color: white; border: none;
       padding: 10px; cursor: pointer;
@@ -703,39 +704,40 @@ text-align: justify;
 
 
 /*---------------------Gallery----------------------------*/
-
-/* Gallery Wrapper */
-.gallery{
+/* Gallery Section */
+.gallery {
   position: relative;
   padding: 150px 50px;
   background-color: #eeeeee;
   border: 1px solid #ddd;
 }
-.gallery .gallery-wrapper {
-  overflow: hidden;
+
+.gallery-wrapper {
   position: relative;
   width: 100%;
-  
   height: 50vh;
   padding: 20px;
-}
-.gallery .gallery-wrapper h2{
-  font-size: 15px;  
-  text-align: left;
-  color: #5a5a5a;
-}
-.gallery .gallery-wrapper h1{
-  font-size: 25px;
-  text-align: left;
-  padding-left: 30px;
-  color: #0f6e75;
+  overflow: hidden;
 }
 
-/* Sliding Track */
-.gallery .gallery-wrapper .gallery-track {
+.gallery-wrapper h2 {
+  font-size: 15px;
+  color: #5a5a5a;
+  text-align: left;
+}
+
+.gallery-wrapper h1 {
+  font-size: 25px;
+  color: #0f6e75;
+  text-align: left;
+  padding-left: 30px;
+}
+
+/* Image Track */
+.gallery-track {
   display: flex;
   gap: 20px;
-  animation: scroll 25s linear infinite;
+  transition: transform 0.5s ease;
 }
 
 .gallery-track img {
@@ -744,35 +746,52 @@ text-align: justify;
   object-fit: cover;
   border-radius: 15px;
   cursor: pointer;
-  transition: transform 0.4s ease;
+  transition: transform 0.3s ease;
 }
 
 .gallery-track img:hover {
   transform: scale(1.05);
 }
 
-/* Infinite Scroll Animation */
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+/* Navigation Buttons */
+.gallery-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  font-size: 30px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 1000;
 }
+
+.gallery-btn:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
 
 /* Fullscreen Modal */
 .fullscreen {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 90%;
+  inset: 0;
   background: rgba(0,0,0,0.95);
   display: none;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 3000;
+}
+
+.fullscreen.active {
+  display: flex;
 }
 
 .fullscreen img {
-  max-width: 95%;
+  max-width: 90%;
   max-height: 80%;
   border-radius: 15px;
   animation: zoomIn 0.4s ease;
@@ -783,10 +802,7 @@ text-align: justify;
   to { transform: scale(1); opacity: 1; }
 }
 
-.fullscreen.active {
-  display: flex;
-}
-
+/* Fullscreen Controls */
 .close-btn {
   position: absolute;
   top: 30px;
@@ -796,7 +812,39 @@ text-align: justify;
   cursor: pointer;
 }
 
+.fs-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 50px;
+  color: white;
+  cursor: pointer;
+}
 
+.fs-btn.prev { left: 40px; }
+.fs-btn.next { right: 40px; }
+.zoom-controls {
+  position: absolute;
+  bottom: 40px;
+  display: flex;
+  gap: 15px;
+}
+
+.zoom-controls button {
+  background: rgba(255,255,255,0.2);
+  border: 1px solid white;
+  color: black;
+  font-size: 20px;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.zoom-controls button:hover {
+  background: rgba(255,255,255,0.5);
+}
 
 /* ---------------- Footer ---------------- */
 .footer {

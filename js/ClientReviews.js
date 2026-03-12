@@ -3,7 +3,7 @@ const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxHuiOH7As4nGhOcNFC
     let clients = [];
     let index = 0;
     const cardsPerSlide = 1;
-    const cardWidth = 400;
+    const cardWidth = 320;
 
     // 10 random colors for avatars
     const colors = ["#FF5733","#33FF57","#3357FF","#FF33A8","#A833FF",
@@ -76,7 +76,7 @@ const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxHuiOH7As4nGhOcNFC
       index = (index - 1) < 0 ? maxIndex : index - 1;
       updateSlider();
     }
-    setInterval(nextSlide, 5000);
+    //setInterval(nextSlide, 5000);
 
     // Fetch reviews from spreadsheet
     function loadReviews() {

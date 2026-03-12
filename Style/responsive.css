@@ -317,6 +317,9 @@
 }
 @media(max-width: 460px){
   /*------------About Us----------*/
+  .review{
+    padding: 80px 10px;
+  }
   .about .two-col .about-right p{
     font-size: 10px;
   }

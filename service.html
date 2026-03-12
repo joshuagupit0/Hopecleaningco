@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cleaning Service</title>
+  <title>Hope Cleaning Co</title>
+  <link rel="icon" type="image/x-icon" href="images/HCClogo.png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
   <link rel="stylesheet" href="Style\style.css">
@@ -82,7 +83,18 @@
     </div>
   </div>
 </div>
-
+<div id="loadingScreen" style="
+  display:none;
+  position:fixed;
+  top:0; left:0; right:0; bottom:0;
+  background:rgba(0,0,0,0.6);
+  color:#fff;
+  font-size:20px;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;">
+  Submitting your request...
+</div>
 <body>
 
 <!-- HEADER -->
@@ -304,29 +316,50 @@
   </div>
 </section>
 
+<!------------------Gallery----------------->
 <section id="gallery" class="gallery">
   <div class="gallery-wrapper">
     <h2>Gallery</h2>
     <h1>“Real results from real clients.”</h1>
-  <div class="gallery-track">
-    <!-- Duplicate images for smooth infinite scroll -->
-    <img src="images/gallery/gallery1.jpeg">
-    <img src="images/gallery/gallery2.jpeg">
-    <img src="images/gallery/gallery3.jpeg">
-    <img src="images/gallery/gallery4.jpeg">
-    <img src="images/gallery/gallery5.jpeg">
-    <img src="images/gallery/gallery6.jpeg">
-    <img src="images/gallery/gallery7.jpeg">
-    <img src="images/gallery/gallery8.jpeg">
+
+    <!-- Image Track -->
+    <div class="gallery-track" id="galleryTrack">
+      <img src="images/gallery/gallery1.jpeg" alt="Gallery Image 1">
+      <img src="images/gallery/gallery2.jpeg" alt="Gallery Image 2">
+      <img src="images/gallery/gallery3.jpeg" alt="Gallery Image 3">
+      <img src="images/gallery/gallery4.jpeg" alt="Gallery Image 4">
+      <img src="images/gallery/gallery5.jpeg" alt="Gallery Image 5">
+      <img src="images/gallery/gallery6.jpeg" alt="Gallery Image 6">
+      <img src="images/gallery/gallery7.jpeg" alt="Gallery Image 7">
+      <img src="images/gallery/gallery8.jpeg" alt="Gallery Image 8">
+    </div>
+
+    <!-- Navigation Buttons -->
+    <button class="gallery-btn prev" id="prevBtn">&#10094;</button>
+    <button class="gallery-btn next" id="nextBtn">&#10095;</button>
+  </div>
+</section>
+
+<!-- Fullscreen Modal -->
+<div class="fullscreen" id="fullscreen">
+  <span class="close-btn" id="closeBtn">&times;</span>
+  <button class="fs-btn prev" id="fsPrev">&#10094;</button>
+  <img id="fullImg" alt="Fullscreen Image">
+  <button class="fs-btn next" id="fsNext">&#10095;</button>
+  <!-- Zoom Controls -->
+  <div class="zoom-controls">
+    <button id="zoomIn">+</button>
+    <button id="zoomOut">-</button>
+    <button id="resetZoom">Reset</button>
   </div>
 </div>
 
-<!-- Fullscreen -->
+<!-- Fullscreen Modal -->
 <div class="fullscreen" id="fullscreen">
   <span class="close-btn" id="closeBtn">&times;</span>
   <img id="fullImg">
 </div>
-</section>
+
 <!-- Popup -->
   <div class="popup-overlay" id="popupOverlay">
     <div class="popup-box">
@@ -387,7 +420,7 @@
     <h4>Follow us on.</h4><br>
     <p>
       <a href="https://www.facebook.com/profile.php?id=61562716752062"><i class="fa-brands fa-facebook"></i></a>
-      <a href=""><i class="fa-brands fa-square-instagram"></i></a>
+      <a href="https://www.instagram.com/hopecleaningco?igsh=MTY2aTdrbmhrZTk3YQ%3D%3D&amp;utm_source=qr"><i class="fa-brands fa-square-instagram"></i></a>
       <a href="https://www.tiktok.com/@hope.cleaning.co8?_r=1&_t=ZS-94EcHVZxuhI"><i class="fa-brands fa-tiktok"></i></a>
       <a href="https://share.google/uNcH9QMP8nZkOrgDI"><i class="fa-brands fa-google"></i></a>
     </p><br>
