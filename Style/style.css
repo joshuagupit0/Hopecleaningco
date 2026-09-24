@@ -14,7 +14,7 @@ body { font-family: 'Poppins', sans-serif;
 }
 a { 
   text-decoration: none; 
-  color: #0F6E75;
+  color: white;
   font-weight: 600; 
 }
 button { 
@@ -62,19 +62,19 @@ header {
   display: flex; 
   justify-content: space-between; 
   align-items: center;
-  padding: 20px 60px; 
-  background: #CFF5F7; 
+  padding: 10px 20px; 
+  background:#12285A; 
   position: sticky; 
   top: 0; 
   z-index: 10;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 header .menu-cont{
-  height: 100%;
+  height: 100px;
 }
 header a img{
-  width: 100px;
-  height: 100px;
+  width: 300px;
+  height: 80px;
 }
 header .menu-cont{
   display: flex;
@@ -94,7 +94,7 @@ header .menu-cont .pop-nav.bg3:hover{background: #13a6a6;}
 header .menu-cont .menu-toggle{background-color: #22b573;}
 header .menu-cont .menu-toggle:hover{background-color: #3ed390;}
 header nav a { 
-  margin-left: 24px; font-weight: 700; 
+  margin-left: 5px; font-weight: 700; 
 }
 .nav-link.show{
   color: #ddd;
@@ -122,7 +122,7 @@ header nav .contact-top div{
   display: inline-flex;
   padding: 10px 10px;
   align-items: center;
-  color: #121212;
+  color: #fff;
   font-weight: 700;
 }
 header nav .contact-top div:hover{
@@ -134,9 +134,8 @@ header nav .contact-top div p{
 
 .btn {
   display: inline-block; padding: 12px 28px;
-  background: #0F6E75; 
-  color: #fff; 
-  border-radius: 30px;
+  background: #fff; 
+  color: #12285A; 
   transition: 0.3s;
 }
 .btn:hover { background: #19A7AE; 
@@ -154,27 +153,29 @@ color: #fff;}
   gap: 20px;
   z-index: 1;
 }
-.home{
-  background: url('../images/Home.png') center/cover no-repeat;
-}
-.home-service{
-  background: url('../images/Services.png') center/cover no-repeat;
-}
-.hero::before{
+.hero:before{
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #adfbff;
+  background-color: #12285A;
+  background: linear-gradient(to left, #fff, #12285A);
   background-size: cover;
   z-index: -1;
-  opacity: 0.2;
+  opacity: 0.7;
+}
+.home{
+  background: url('https://images.pexels.com/photos/19836790/pexels-photo-19836790.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover no-repeat;
+}
+.home-service{
+  background: url('../images/Services.png') center/cover no-repeat;
 }
 
+
 .hero .hero-content {
-  color: #0f6e75;
+  color: #fff;
   min-width: 300px; 
 
   padding: 30px; 
@@ -223,7 +224,7 @@ color: #fff;}
   background: url('../images/About.png') center/cover no-repeat;
   z-index: 1;
 }
-.about .two-col .about-left::before{
+/*.about .two-col .about-left::before{
   content: "";
   position: absolute;
   top: 0;
@@ -234,10 +235,10 @@ color: #fff;}
   background-size: cover;
   z-index: -1;
   opacity: 0.2;
-}
+}*/
 .about .two-col .about-right{
   width: 100%;
-  border: 3px solid #0f6e75;
+  border: 3px solid #12285A;
   background-color: #fff;
 }
 .about .two-col .about-right h2{
@@ -249,7 +250,7 @@ color: #fff;}
   font-size: 25px;
   text-align: left;
   padding-left: 30px;
-  color: #0f6e75;
+  color: #1f4191;
 }
 
 .about .two-col .about-right h2{
@@ -278,8 +279,8 @@ color: #fff;}
 .services{
   padding: 80px 60px;
   position: relative;
-  border-top: 3px solid #0f6e75;
-  border-bottom: 3px solid #0f6e75;
+  border-top: 3px solid #12285A;
+  border-bottom: 3px solid #12285A;
   width: 100%;
 }
  .serv-con { 
@@ -298,7 +299,7 @@ color: #fff;}
   transition: transform 0.3s;
 }
 .services h1{
-  color: #0F6E75;
+  color: #1f4191;
 }
 .services h2{
   font-size: 15px;  
@@ -312,7 +313,7 @@ color: #fff;}
   }
   .services .serv-con .card-serv h3{
     font-size: 20px;
-    color: #0F6E75;
+    color: #1f4191;
     font-weight: 800;
   }
   .services .serv-con .card-serv p{
@@ -346,9 +347,9 @@ margin-bottom: 10px;
 .choose{
   position: relative;
   padding: 80px 30px;
-  background-color: #eeeeee;
+  background-color: #ebeffb;
   z-index: 1;
-  color: #0F6E75;
+  color: #123b5a;
   border: 1px solid #ddd;
 }
 
@@ -360,7 +361,7 @@ margin-bottom: 10px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); 
   gap: 20px;
-  color: #fff;
+  color: #12285A;
 }
 .choose .choose-cont .five-col, .choose .choose-cont h2{
   margin-top: 40px;
@@ -368,7 +369,7 @@ margin-bottom: 10px;
 .choose .choose-cont .five-col div{
   display: inline-block;
   border: 1px solid #ddd;
-  background-color: #0F6E75;
+  background-color: #fff;
   padding: 30px 0;
   border-radius: 10px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05); 
@@ -583,7 +584,7 @@ text-align: justify;
       font-size: 25px;
       text-align: left;
       padding-left: 30px;
-      color: #0f6e75;
+      color: #1f4191;
     }
     /* Review slider */
     .review .review-slider {
@@ -728,7 +729,7 @@ text-align: justify;
 
 .gallery-wrapper h1 {
   font-size: 25px;
-  color: #0f6e75;
+  color: #1f4191;
   text-align: left;
   padding-left: 30px;
 }
@@ -848,18 +849,21 @@ text-align: justify;
 
 /* ---------------- Footer ---------------- */
 .footer {
-  background: #CFF5F7; 
+  background: #12285A; 
   padding: 40px 60px; 
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); 
   gap: 30px;
+}
+.foot-color{
+  color: #fff;
 }
 .footer div{
   display: inline-flexbox;
   align-items: center;
 }
 .footer div a img{
-  width: 100px;
+  width: 300px;
 }
 .footer .contact-bottom{
   position: relative;
@@ -870,7 +874,7 @@ text-align: justify;
   margin-top: 20px;
   font-size: 17px;
   font-weight: 500;
-  color: #0F6E75;
+  color: #fff;
 }
 .footer div p a i{
   font-size: 30px;
@@ -1037,7 +1041,7 @@ text-align: justify;
 }
 .serv-detail h1{
     padding-bottom: 40px;
-    color: #0f6e75;
+    color: #1f4191;
 }
 .serv-detail h2{
   font-size: 20px;  
@@ -1078,7 +1082,7 @@ text-align: justify;
       width: 300px;
       height: 100%;
       background: #f9f9f9;
-      border-right: 3px solid #00c4a7;
+      border-right: 3px solid #12285A;
       box-shadow: 4px 0 8px rgba(0,0,0,0.2);
       transition: left 0.4s ease;
       padding: 20px;
@@ -1090,7 +1094,7 @@ text-align: justify;
     }
 
     .sidebar .quote-cont h2 {
-      color: #00c4a7;
+      color: #12285A;
       margin-top: 0;
     }
 
@@ -1128,7 +1132,7 @@ text-align: justify;
       font-weight: 700;
       font-size: 15px;
       transform-origin: right;
-      background: #00c4a7;
+      background: #12285A;
       color: white;
       padding: 8px 8px;
       cursor: pointer;
