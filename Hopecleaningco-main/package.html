@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hope Cleaning Co</title>
+  <link rel="icon" type="image/x-icon" href="images/HCClogo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" href="Style\style.css">
+  <link rel="stylesheet" href="Style\responsive.css">
+ <script src="https://kit.fontawesome.com/44cc7eda07.js" crossorigin="anonymous"></script>
+<style>
+    /* ===== LOADING SCREEN ===== */
+#loader {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.loader-container {
+  text-align: center;
+}
+
+.loader-container img {
+  width: 240px;
+  margin-bottom: 25px;
+}
+
+/* ===== BUFFER BAR ===== */
+.buffer-bar {
+  width: 250px;
+  height: 6px;
+  background: #e0e0e0;
+  border-radius: 50px;
+  overflow: hidden;
+  margin: auto;
+}
+
+.buffer-progress {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #0f8a8a, #22b573);
+  animation: loading 6.9s ease-in-out infinite;
+}
+
+/* Buffer Animation */
+@keyframes loading {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 80%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+
+/* Hide Loader */
+#loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+/*-----------package-------------*/
+  .header {
+      background: linear-gradient(135deg, #0F6E75, #0f8a8a);
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    
+        .hero-pack {
+  font-family: "Montserrat", sans-serif;
+  align-content: center;
+  justify-items: center;
+  position: relative;
+  min-height: 50vh; 
+  padding: 60px; 
+  background: url('images/package.png') center/cover no-repeat;
+  align-items: center;
+  gap: 20px;
+  z-index: 1;
+  color: #0F6E75;
+}
+.hero-pack::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #adfbff;
+  background-size: cover;
+  z-index: -1;
+  opacity: 0.1;
+}
+.hero-pack h1{
+  font-size: 70px;
+  font-weight: 800;
+  color: #f5f5f5;
+  text-shadow:
+    1px 1px 1px #919191,
+    1px 2px 1px #919191,
+    1px 3px 1px #919191,
+    1px 4px 1px #919191,
+    1px 5px 1px #919191,
+    1px 6px 1px #919191,
+    1px 7px 1px #919191,
+    1px 8px 1px #919191,
+    1px 9px 1px #919191,
+    1px 10px 1px #919191, /* The "depth" shadows */
+    1px 10px 1px rgba(16, 16, 16, 0.4); /* The main drop shadow for extra depth */
+}
+@media (max-width: 740px){
+  .hero-pack h1{
+    font-size: 50px;
+    text-shadow:
+   
+    1px 1px 1px #919191,
+    1px 2px 1px #919191,
+    1px 3px 1px #919191,
+    1px 4px 1px #919191,
+    1px 5px 1px #919191, /* The "depth" shadows */
+    1px 6px 1px rgba(16, 16, 16, 0.4); /* The main drop shadow for extra depth */
+    }
+  }
+
+
+    /* Responsive tweaks */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+      .card h2 {
+        font-size: 1.1rem;
+      }
+      .pricing-container {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      padding: 10px;
+    }
+    }
+  </style>
+<div id="loadingScreen" style="
+  display:none;
+  position:fixed;
+  top:0; left:0; right:0; bottom:0;
+  background:rgba(0,0,0,0.6);
+  color:#fff;
+  font-size:20px;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;">
+  Submitting your request...
+</div>
+</head>
+
+<body>
+<!-- HEADER -->
+<div class="bus-cont">
+<div class="bus-hour">
+  <span class="material-symbols-outlined">business_center</span>
+      <p>Business Hours: Monday to Friday 8AM-5PM</p></div>
+</div>
+<header class="head-marg">
+  <a href="#home"><img src="images\HCClogo.png" alt=""></a>
+  <!-- Hamburger Menu Button -->
+   <div class="menu-cont">
+  <div class="pop-nav bg1"><a href="index.html#home" class="btn-contact"><i class="fa-regular fa-house"></i></a></div>
+  <div class="pop-nav bg2"><a href="#contact-us" class="btn-contact"><i class="fa-solid fa-phone"></i></a></div>
+  <div class="pop-nav bg3"><a class="btn-nav" id="bookBtn">Book Now</a></div>
+  <button class="menu-toggle" id="menu-toggle">
+    <span class="material-symbols-outlined">menu</span>
+  </button>
+  </div>
+  <nav id="nav">
+    <a href="index.html#home" class="nav-link active hide">Home</a>
+    <a href="index.html#about" class="nav-link">About Us</a>
+    <a href="service.html" class="nav-link">Services</a>
+    <a href="#" class="nav-link">Pricing</a>
+    <a href="index.html#reviews" class="nav-link">Reviews</a>
+    <a href="index.html#gallery" class="nav-link">Gallery</a>
+    <a href="#contact-us" class="nav-link hide">Contact Us</a>
+    <a href="#contact-us" class="nav-link show"><i class="fa-solid fa-phone"></i></a>
+    <a class="btn" id="bookBtn">Book Now</a>
+
+    <div class="contact-top">
+      <div>
+      <span class="material-symbols-outlined">business_center</span>
+      <p>Monday to Friday 8AM-5PM</p>
+    </div>
+    <div class="contact-hide">
+      <span class="material-symbols-outlined icon-style">call</span>
+      <p>+61 426-509-090</p>
+    </div>
+    <div class="contact-hide">
+      <span class="material-symbols-outlined icon-style">mail</span>
+      <p>hopecleaningco88@gmail.com</p>
+    </div>
+  </div>
+  </nav>
+</header>
+   <!-- sideBar-left-->
+  <div id="sidebar" class="sidebar">
+    <div class="quote-cont">
+      <form id="quoteForm">
+        <h2>Request a Quote</h2>
+        <label>Name</label>
+        <input type="text" name="name" placeholder="John Doe" required>
+        <label>Email Address</label>
+        <input type="email" name="email" placeholder="johndoe@gmail.com" required>
+        <label>Contact Number</label>
+        <input type="number" name="contact" placeholder="04xxxxxxxx" required>
+        
+        <!-- Dropdown -->
+        <label>Service</label>
+        <select id="serviceSelect" name="service" required>
+          <option value="">-- Please choose --</option>
+          <option value="Residential Cleaning">Residential Cleaning</option>
+          <option value="End of Lease Cleaning">End of Lease Cleaning</option>
+          <option value="Window Cleaning">Window Cleaning</option>
+          <option value="Office Cleaning">Office Cleaning</option>
+          <option value="Carpet Cleaning">Carpet Cleaning</option>
+          <option value="Oven Cleaning">Oven Cleaning</option>
+          <option value="Airbnb Cleaning">Airbnb Cleaning</option>
+          <option value="NDIS Cleaning">NDIS Cleaning</option>
+          <option value="Deep Cleaning">Deep Cleaning</option>
+          <option value="Other">Other</option>
+        </select>
+        <input type="text" id="customService" class="custom-input" placeholder="Enter custom service">
+
+        <label>Message</label>  
+        <textarea name="message" placeholder="Details" required></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <!-- Button is inside sidebar, moves with it -->
+    <button id="quoteBtn" class="quote-btn">Get A Quote Now</button>
+  </div>
+  </div>
+<script src="js/leftside.js"></script>
+
+
+<!-- HERO SECTION -->
+<section class="hero-pack">
+  <h1>Cleaning Services Pricing</h1>
+</section>
+
+<!------------------Package------------->
+<!-- Sidebar -->
+ <h1 class="pack-sub">HOPE CLEANING CO<br>SIGNATURE COLLECTION<br>All Pricing Includes GST</h1>
+ <!-- ----------Table--------------- -->
+ <section class="table" id="table">
+  <div class="table-cont">
+    <!-- Regular Price-->
+    <h2>Set Priced Cleans</h2>
+    <table class="table-hide">
+      <tr class="tr-bg">
+        <th style="padding: 0 10px;"></th>
+        <th colspan="3" style="padding: 0 10px;text-align: center;border-left: 2px solid #ddd;border-right: 2px solid #ddd;">Signature Maintenance</th>
+        <th style="padding: 0 10px;"></th>
+        <th style="padding: 0 10px;"></th>
+      </tr>
+      <tr class="tr-bg">
+      <th style="padding: 0 10px;">Bedrooms</th>
+      <th style="padding: 0 10px;border-left: 2px solid">Weekly</th>
+      <th style="padding: 0 10px;">Fortnightly</th>
+      <th style="padding: 0 10px;border-right: 2px solid">Monthly</th>
+      <th rowspan="" style="padding: 0 10px;">Deep Clean</th>
+        <th rowspan="" style="padding: 0 10px;">End of Lease</th>
+      </tr>
+      <tr>
+        <td>1–2 BEDROOMS | 1 BATHROOM</td>
+        <td>$125</td>
+        <td>$130</td>
+        <td>$150</td>
+        <td>$300</td>
+        <td>$590</td>
+      </tr>
+      <tr>
+        <td>3 BEDROOMS | 1 BATHROOM</td>
+        <td>$145</td>
+        <td>$155</td>
+        <td>$170</td>
+        <td>$380</td>
+        <td>$670</td>
+      </tr>
+      <tr>
+        <td>4 BEDROOMS | 2 BATHROOMs</td>
+        <td>$165</td>
+        <td>$175</td>
+        <td>$190</td>
+        <td>$460</td>
+        <td>$770</td>
+      </tr>
+      <tr>
+        <td>5 BEDROOMS | 2 BATHROOMs</td>
+        <td>$220</td>
+        <td>$225</td>
+        <td>$245</td>
+        <td>$540</td>
+        <td>$825</td>
+      </tr>
+    </table>
+    <div class="table-card table-show">
+      <table>
+        <tr class="tr-bg">
+          <th></th>
+          <th>1–2 BEDROOMS<br>1 BATHROOM</th>
+        </tr>
+        <tr>
+          <td>Signature <br>Maintenance<br>Weekly</td>
+          <td>$125</td>
+        </tr>
+        <tr>
+          <td>Fortnighly</td>
+          <td>$130</td>
+        </tr>
+        <tr>
+          <td class="td-line">Monthly</td>
+          <td class="td-line">$150</td>
+        </tr>
+        <style> .td-line{border-bottom: 4px solid #ddd;}</style>
+        <tr>
+          <td>Deep Cleaning</td>
+          <td>$300</td>
+        </tr>
+        <tr>
+          <td>End Lease Cleaning</td>
+          <td>$590</td>
+        </tr>
+      </table>
+    </div>
+    <div class="table-card table-show">
+      <table>
+        <tr class="tr-bg">
+          <th></th>
+          <th>3 BEDROOMS<br>1 BATHROOM</th>
+        </tr>
+        <tr>
+          <td>Signature <br>Maintenance<br>Weekly</td>
+          <td>$145</td>
+        </tr>
+        <tr>
+          <td>Fortnighly</td>
+          <td>$155</td>
+        </tr>
+        <tr>
+          <td  class="td-line">Monthly</td>
+          <td  class="td-line">$170</td>
+        </tr>
+        <tr>
+          <td>Deep Cleaning</td>
+          <td>$380</td>
+        </tr>
+        <tr>
+          <td>End Lease Cleaning</td>
+          <td>$670</td>
+        </tr>
+      </table>
+    </div>
+    <div class="table-card table-show">
+      <table>
+        <tr class="tr-bg">
+          <th></th>
+          <th>4 BEDROOMS<br>2 BATHROOM</th>
+        </tr>
+        <tr>
+          <td>Signature <br>Maintenance<br>Weekly</td>
+          <td>$165</td>
+        </tr>
+        <tr>
+          <td>Fortnighly</td>
+          <td>$175</td>
+        </tr>
+        <tr>
+          <td  class="td-line">Monthly</td>
+          <td  class="td-line">$190</td>
+        </tr>
+        <tr>
+          <td>Deep Cleaning</td>
+          <td>$460</td>
+        </tr>
+        <tr>
+          <td>End Lease Cleaning</td>
+          <td>$770</td>
+        </tr>
+      </table>
+    </div>
+    <div class="table-card table-show">
+      <table>
+        <tr class="tr-bg">
+          <th></th>
+          <th>5 BEDROOMS<br>2 BATHROOM</th>
+        </tr>
+        <tr>
+          <td>Signature <br>Maintenance<br>Weekly</td>
+          <td>$220</td>
+        </tr>
+        <tr>
+          <td>Fortnighly</td>
+          <td>$225</td>
+        </tr>
+        <tr>
+          <td class="td-line">Monthly</td>
+          <td class="td-line">$254</td>
+        </tr>
+        </tr>
+        <tr>
+          <td>Deep Cleaning</td>
+          <td>$540</td>
+        </tr>
+        <tr>
+          <td>End Lease Cleaning</td>
+          <td>$825</td>
+        </tr>
+      </table>
+    </div>
+    <!--Adds On-->
+    <h2>Adds-Ons</h2>
+    <table class="table-hide">
+      <tr class="tr-bg">
+        <th style="width: 60%;">Services</th>
+        <th>Price</th>
+      </tr>
+      <tr>
+        <td>Carpet Clean</td>
+        <td>$55<br>(good condition for End of lease)</td>
+
+      </tr>
+      <tr>
+        <td>Bathroom</td>
+        <td>$35</td>
+
+      </tr>
+      <tr>
+        <td>Powder Room</td>
+        <td>$15</td>
+      </tr>
+    </table>
+    <div class="table-card table-show">
+      <table>
+        <tr class="tr-bg">
+        <th style="width: 60%;">Services</th>
+        <th>Price</th>
+      </tr>
+      <tr>
+        <td>Carpet Clean</td>
+        <td>$55<br>(good condition for End of lease)</td>
+
+      </tr>
+      <tr>
+        <td>Bathroom</td>
+        <td>$55</td>
+
+      </tr>
+      <tr>
+        <td>Powder Room</td>
+        <td>$20</td>
+      </tr>
+      </table>
+    </div>
+    <!--Other Services-->
+    <h2>Other Services</h2>
+    <style>
+      .td-border{
+
+        position: relative;
+        border-bottom: 2px dashed #ddd;
+      }.td-relative{
+        display: flex;
+        width: 100%;
+        text-align: center;
+        margin-top: -26px;
+        margin-left: 70%;
+      }
+      .td-relative p{
+        font-size: 20px;
+        font-weight: 900;
+      }
+     </style>
+    <table class="table-hide">
+      <tr class="tr-bg">
+        <th colspan="2" style="width: 60%;">Carpet Cleaning</th>
+      </tr>
+      <tr>
+        <td>1–2 BEDROOMS</td>
+        <td>$120</td>
+      </tr>
+      <tr>
+        <td>3 BEDROOMS</td>
+        <td>$135</td>
+      </tr>
+      <tr>
+        <td>4 BEDROOMS</td>
+        <td>$150</td>
+      </tr>
+      <tr class="td-border">
+        <td>5 BEDROOMS</td>
+        <td>$185</td>
+      </tr>
+      <tr>
+        <td class="td-relative" colspan="3"><p>Add-Ons</p></td>
+      </tr>
+     
+      <tr style="padding-top: 10px;">
+        <td>Flea Treatments</td>
+        <td>$35</td>
+      </tr>
+
+        <!---->
+         <tr class="tr-bg">
+        <th colspan="2">Window Cleaning</th>
+      </tr>
+      <tr>
+        <td>1–2 BEDROOMS</td>
+        <td>$150</td>
+      </tr>
+      <tr>
+        <td>3 BEDROOMS</td>
+        <td>$220</td>
+      </tr>
+      <tr>
+        <td>4 BEDROOMS</td>
+        <td>$260</td>
+      </tr>
+      <tr class="td-border">
+        <td>5 BEDROOMS</td>
+        <td>$330</td>
+      </tr>
+      <tr>
+        <td class="td-relative" colspan="2"><p>Add-Ons</p></td>
+      </tr>
+      <tr>
+        <td style="padding-top: 10px;">Windowsills</td>
+        <td>$45</td></tr>
+        <tr>
+        <td>Window Tracks</td>
+        <td>$80</td></tr>
+          <!--Oven-->
+      <tr class="tr-bg">
+        <th style="width: 60%;"></th>
+        <th colspan="">Oven Cleaning</th>
+      </tr>
+      <tr>
+        <td>600mm Oven</td>
+        <td>$160</td>
+      </tr>
+      <tr>
+        <td>900mm Oven</td>
+        <td>$185</td>
+      </tr>
+      <tr>
+        <td>Double Oven</td>
+        <td>$250</td>
+      </tr>
+    </table>
+    <div class="table-card table-show">
+      <table>
+        <tr class="tr-bg">
+        <th colspan="2" style="text-align: center;">Carpet Cleaning</th>
+         </tr>
+      <tr>
+        <td colspan="" style="width: 60%;">1-2 Bedrooms</td>
+        <td>$120</td>
+      </tr>
+      <tr>
+         <td>3 Bedrooms</td>
+         <td>$135</td>
+    </tr>
+        <tr>
+        <td>4 Bedrooms</td>
+        <td>$150</td>
+        </tr>
+        <tr>
+          <td>5 Bedrooms</td>
+          <td>$185</td>
+        </tr>
+        <td colspan="2" style="text-align: center; border-top: 2px dashed #ddd;border-bottom: 2px dashed #ddd; padding: 0;">Add-Ons</td>
+      </tr>
+      <tr>
+        <td colspan="">Flea Treatments</td>
+        <td>$35</td>
+      </tr>
+      <tr class="tr-bg">
+        <th colspan="2" style="text-align: center; padding-bottom: 0;">Windows Cleaning</th>
+      <tr>
+        <tr class="tr-bg">
+        <th colspan="2" style="text-align: center; font-size: 10px; padding-top: 0;">Cleaning of inside and outside windows only <br>(not including windowsills or window tracks)</th>
+      <tr>
+        <td>1-2 Bedrooms</td>
+        <td>$150</td>
+      </tr>
+      <tr>
+        <td>3 Bedrooms</td>
+        <td>$220</td>
+      </tr>
+      <tr>
+        <td>4 Bedrooms</td>
+        <td>$260</td>
+      </tr>
+      <tr>
+        <td>5 Bedrooms</td>
+        <td>$330</td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align: center; border-top: 2px dashed #ddd;border-bottom: 2px dashed #ddd; padding: 0;">Add-Ons</td>
+      </tr>
+      <tr>
+        <td colspan="">Windowsills</td>
+        <td>$35</td>
+      </tr>
+      <tr>
+        <td colspan="">Window Tracks</td>
+        <td>$80</td>
+      </tr>
+      <tr class="tr-bg">
+        <th colspan=""></th>
+        <th colspan="">Oven Cleaning</th>
+      </tr>
+      <tr>
+        <td colspan="">600mm Oven</td>
+        <td>$160</td>
+      </tr>
+      <tr>
+        <td colspan="">900mm Oven</td>
+        <td>$185</td>
+      </tr>
+      <tr>
+        <td colspan="">Double Oven</td>
+        <td>$250</td>
+      </tr>
+      </table>
+    </div>
+  </div>
+ </section>
+ <section class="package-cont">
+<h1 class="pack-sub">Package Included</h1>
+
+  <script src="js\leftside.js"></script>
+  <div class="pricing-container">
+
+    <!-- Regular Clean -->
+    <div class="pack-card">
+      <h2>Regular Clean</h2>
+      <ul>
+        <h3>Package Included</h3>
+      <ul>
+        <li class="square-bullet">Dust all accessible surfaces</li>
+        <li class="square-bullet">Dust furniture(nesseary)</li>
+        <li class="square-bullet">Vacuum carpets & rugs</li>
+        <li class="square-bullet">Mop hard floors</li>
+        <li class="square-bullet">Wipe and sanitise benchtops</li>
+        <li class="square-bullet">Clean stovetop</li>
+        <li class="square-bullet">Clean splashback</li>
+        <li class="square-bullet">Clean and polish sink & tapware</li>
+        <li class="square-bullet">Wipe cupboard doors (external)</li>
+        <li class="square-bullet">Wipe exterior of appliances (fridge, microwave, dishwasher)</li>
+        <li class="square-bullet">Vacuum/Mop floor</li>
+        <li class="square-bullet">Clean and disinfect toilet (inside & outside)</li>
+        <li class="square-bullet">Clean shower screens & bathtub</li>
+        <li class="square-bullet">Clean vanity & sink</li>
+        <li class="square-bullet">Polish mirrors</li>
+        <li class="square-bullet">Polish tapware</li>
+        <li class="square-bullet">Wipe tiles (light clean)</li>
+        <li class="square-bullet">Vacuum/Mop floors</li>
+        </ul> 
+      </ul>
+    </div>
+
+    <!-- End of Lease Cleaning -->
+    <div class="pack-card">
+      <h2>End of Lease Cleaning</h2>
+      <ul>
+        <h3>Package Included</h3>
+        <ul>
+          <li class="square-bullet">Remove cobwebs from corners of rooms and ceilings</li>
+          <li class="square-bullet">Dust surfaces skirting boards</li>
+          <li class="square-bullet">Clean light switches/power points </li>
+          <li class="square-bullet">Wipe down kitchen benchtops & backsplash</li>
+          <li class="square-bullet">Clean and polish kitchen sink & stovetop</li>
+          <li class="square-bullet">Polish kitchen tapware</li>
+          <li class="square-bullet">Oven clean</li>
+          <li class="square-bullet">Rangehood</li>
+          <li class="square-bullet">Clean dishwasher</li>
+          <li class="square-bullet">Wipe down kitchen cupboards in/out and doorsClean cupboard pantry</li>
+          <li class="square-bullet">Bathroom-Clean bathroom mirrors, vanity top, bathtubs, toilet & shower</li>
+          <li class="square-bullet">Polish bathroom tapware</li>
+          <li class="square-bullet">Laundry - Wipe down benchtops and clean and polish sink & tapware</li>
+          <li class="square-bullet">Vacuum floors/Mop floors throughout the house</li>
+          <li class="square-bullet">Living Area</li>
+          <li class="square-bullet">Bedrooms -clean wardrobe, door frames</li>
+          <li class="square-bullet">Dust & wipe over fans or air-conditioned  filter</li>
+          <li class="square-bullet">Dust skirting boards & architraves</li>
+          <li class="square-bullet">Wall washing necessary /remove marks on the walls</li>
+          <li class="square-bullet">Clean windows, sills and tracks interior</li>
+          </ul>
+      </ul>
+    </div>
+
+    <!-- Deep Cleaning -->
+    <div class="pack-card">
+      <h2>Deep Cleaning</h2>
+      <ul>
+      <h3>Package Included</h3>
+        <ul>
+          <li class="square-bullet">Detailed dusting including skirting boards</li>
+          <li class="square-bullet">Remove cobwebs</li>
+          <li class="square-bullet">Clean doors, frames & switches</li>
+          <li class="square-bullet">Vacuum carpets & mop floors</li>
+          <li class="square-bullet">Clean stovetop & splashback</li>
+          <li class="square-bullet">Wipe cupboards (external)</li>
+          <li class="square-bullet">Clean sink & polish tapware</li>
+          <li class="square-bullet">Exterior appliance cleaning</li>
+          <li class="square-bullet">Deep clean shower & bathtub</li>
+          <li class="square-bullet">Scrub tiles & grout (light build-up)</li>
+          <li class="square-bullet">Clean toilet, vanity & mirrors</li>
+          <li class="square-bullet">Polish tapware</li>
+          <li class="square-bullet">Mop floor</li>
+        </ul>
+      </ul>
+    </div>
+  </div>
+  </section>
+
+
+<section class="book-image">
+  
+    <div class="bk-image">
+    <img src="images/book.png">   
+     </div>
+    <div class="bk-cont">
+      <div>
+        <h1>Hope Cleaning Co</h1>
+        <h2>Reliable and detailed cleaning services designed to leave your space fresh, hygienic, and inspection-ready.</h2>
+      </div>
+    </div>
+</section>
+<div style="display: flex; justify-content: center; padding: 20px 0 150px 0 ;"><a class="btn" id="bookBtn" style="width: 300px; text-align: center; font-size: 25px;">Book Now</a></div>
+
+<!-- Popup -->
+  <div class="popup-overlay" id="popupOverlay">
+    <div class="popup-box">
+      <h2>Terms & Conditions</h2>
+      <p><strong>By booking with Hope Cleaning Co, you agree to the following:</strong></p>
+      <p><b>1. Booking Confirmation</b><br>
+        All bookings are subject to availability. We will contact you within 24 hours to confirm your appointment.</p>
+      <p><b>2. Access to Property</b><br>
+        Clients must provide safe and clear access to the property at the scheduled time. Hot water and power must be available during the cleaning. If we cannot access the property, a cancellation fee may apply.</p>
+      <p><b>3. Payment Terms</b><br>
+        Payment is due on the day of service unless otherwise agreed. For End of Lease or One-Off Jobs, half payment is required upfront and the remaining half upon completion. If the client does not request a re-clean, or is not satisfied but does not want the re-clean, the second half payment is still required.</p>
+      <p><b>4. Cancellations</b><br>
+        At least 24 hours’ notice is required for cancellations or rescheduling. Late cancellations may incur a fee.</p>
+      <p><b>5. Satisfaction Guarantee</b><br>
+        We offer a 7-day satisfaction guarantee. If you are not satisfied, we will return and re-clean at no extra charge if requested within 7 days.</p>
+      <p><b>6. Safety & Liability</b><br>
+        We are fully insured. Pre-existing damage or wear and tear is not covered.</p>
+
+      <h2>Privacy Policy</h2>
+      <p>Hope Cleaning Co respects your privacy.<br>
+        • We collect personal information only for booking and communication purposes.<br>
+        • We do not share your information with third parties.<br>
+        • Your details are stored securely.</p>
+
+      <div class="popup-buttons">
+        <button class="decline-btn" id="declineBtn">Decline</button>
+        <button class="accept-btn" id="acceptBtn">Accept</button>
+      </div>
+    </div>
+  </div>
+
+<!-- FOOTER -->
+<section id="contact-us" class="footer">
+  <div>
+    <a href="#home"><img src="images\HCClogo.png" alt=""></a>
+    <h3>Hope Cleaning Co.</h3>
+    <p>Let's start a conversation</p>
+  </div>
+  <div class="contact-bottom">
+    <div>
+      <span class="material-symbols-outlined icon-style">call</span>
+      <p> +61 426-509-090</p>
+    </div>
+    <div>
+      <span class="material-symbols-outlined icon-style">mail</span>
+      <p> hopecleaningco88@gmail.com</p>
+    </div>
+    <div>
+      <span class="material-symbols-outlined">location_on</span>
+      <p> Ballarat, Victoria Australia</p>
+    </div>
+    <div>
+      <span class="material-symbols-outlined">receipt_long</span>
+      <p>ABN: 34 634 591 038</p>
+    </div>
+  </div>
+  <div>
+    <h4>Follow us on.</h4><br>
+    <p>
+      <a href="https://www.facebook.com/profile.php?id=61562716752062"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://www.instagram.com/hopecleaningco?igsh=MTY2aTdrbmhrZTk3YQ%3D%3D&amp;utm_source=qr"><i class="fa-brands fa-square-instagram"></i></a>
+      <a href="https://www.tiktok.com/@hope.cleaning.co8?_r=1&_t=ZS-94EcHVZxuhI"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="https://share.google/uNcH9QMP8nZkOrgDI"><i class="fa-brands fa-google"></i></a>
+    </p><br>
+    <p>© 2026 Hope Cleaning Co. All Rights Reserved.</p>
+  </div>
+</section>
+</body>
+
+<script src="js\terms.js"></script>
+
+<script>
+  //Menubar
+document.getElementById("menu-toggle").addEventListener("click", function () {
+  document.getElementById("nav").classList.toggle("show");
+});
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) entry.target.classList.add('show');
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('section, .card, .two-col').forEach(el => {
+  el.classList.add('fade-in'); 
+  observer.observe(el);
+});
+</script>
+<!-------------------Scroll Animation--------------->
+
+</html>
+
