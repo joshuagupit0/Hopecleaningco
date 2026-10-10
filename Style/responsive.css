@@ -63,11 +63,6 @@
   header{
     padding: 0;
   }
-  header a img{
-  width: 70px;
-  height: 70px;
-  margin: 0 10px;
-  }
 
   header .menu-cont .pop-nav{
   display: block;
@@ -207,7 +202,20 @@
 }
 
 }
+@media(max-width: 620px){
+  /*------------Nav----------------*/
+  header a img{
+    width: 220px;
+    height: 60px;}
+}
 @media(max-width: 540px){
+  /*------------Nav----------------*/
+  header a .logo-hide{
+    display: none;}
+  header a .logo-show{display: block;}
+  header a img{
+    width: 70px;
+    height: 70px;}
     /*------------Hero----------------*/
     .hero{
         padding: 20px;
@@ -263,6 +271,45 @@
 }
 }
 
+@media(max-width: 460px){
+  /*------------About Us----------*/
+  .review{
+    padding: 80px 10px;
+  }
+  .about .two-col .about-right p{
+    font-size: 10px;
+  }
+  .about{
+  padding: 40px 10px;
+}
+/*------sidebar-left*/
+.sidebar .quote-btn {
+      font-weight: 700;
+      font-size: 13px;
+      padding: 2.5px 5px;
+
+    }
+  /*--------package page-------------*/
+  .table{
+    padding: 30px 10px;
+
+  }
+  .pack-sub{
+    font-size: 20px;
+  }
+  .table-card{
+    width: 100%;
+  }
+  .table .table-cont{
+  padding: 20px 5px;
+}
+.table .table-cont table, .table .table-cont div{
+  font-size: 12px;
+}
+.package-cont{
+  padding: 30px 10px;
+}
+}
 
 
 @media(max-width: 414px){
@@ -315,45 +362,7 @@
     }
 
 }
-@media(max-width: 460px){
-  /*------------About Us----------*/
-  .review{
-    padding: 80px 10px;
-  }
-  .about .two-col .about-right p{
-    font-size: 10px;
-  }
-  .about{
-  padding: 40px 10px;
-}
-/*------sidebar-left*/
-.sidebar .quote-btn {
-      font-weight: 700;
-      font-size: 13px;
-      padding: 2.5px 5px;
 
-    }
-  /*--------package page-------------*/
-  .table{
-    padding: 30px 10px;
-
-  }
-  .pack-sub{
-    font-size: 20px;
-  }
-  .table-card{
-    width: 100%;
-  }
-  .table .table-cont{
-  padding: 20px 5px;
-}
-.table .table-cont table, .table .table-cont div{
-  font-size: 12px;
-}
-.package-cont{
-  padding: 30px 10px;
-}
-}
 @media(max-width: 410px){
      header .menu-cont .pop-nav a, header .menu-cont .menu-toggle,  header .menu-cont .pop-nav .btn-nav{
       min-width: 50px;

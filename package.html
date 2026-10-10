@@ -72,6 +72,7 @@
 
 /*-----------package-------------*/
   .header {
+    position: relative;
       background: linear-gradient(135deg, #0F6E75, #0f8a8a);
       color: #fff;
       padding: 20px;
@@ -97,18 +98,7 @@
   z-index: 1;
   color: #0F6E75;
 }
-.hero-pack::before{
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #adfbff;
-  background-size: cover;
-  z-index: -1;
-  opacity: 0.1;
-}
+
 .hero-pack h1{
   font-size: 70px;
   font-weight: 800;
@@ -177,7 +167,10 @@
       <p>Business Hours: Monday to Friday 8AM-5PM</p></div>
 </div>
 <header class="head-marg">
-  <a href="#home"><img src="images\HCClogo.png" alt=""></a>
+  <a class="logo" href="#home">
+    <img class="logo-hide" src="images\HCClogo.png" alt="Hope Cleaning Co Logo">
+    <img class="logo-show" src="images\Logo-single.png" alt="Hope Cleaning Co Logo">
+  </a>
   <!-- Hamburger Menu Button -->
    <div class="menu-cont">
   <div class="pop-nav bg1"><a href="index.html#home" class="btn-contact"><i class="fa-regular fa-house"></i></a></div>
@@ -199,13 +192,9 @@
     <a class="btn" id="bookBtn">Book Now</a>
 
     <div class="contact-top">
-      <div>
-      <span class="material-symbols-outlined">business_center</span>
-      <p>Monday to Friday 8AM-5PM</p>
-    </div>
     <div class="contact-hide">
       <span class="material-symbols-outlined icon-style">call</span>
-      <p>+61 426-509-090</p>
+      <p><a href="tel:0426 509 090">0426 509 090</a></p>
     </div>
     <div class="contact-hide">
       <span class="material-symbols-outlined icon-style">mail</span>
@@ -259,6 +248,7 @@
 <!-- HERO SECTION -->
 <section class="hero-pack">
   <h1>Cleaning Services Pricing</h1>
+  <div class="diagonal-panel"></div>
 </section>
 
 <!------------------Package------------->
@@ -787,14 +777,14 @@
 <!-- FOOTER -->
 <section id="contact-us" class="footer">
   <div>
-    <a href="#home"><img src="images\HCClogo.png" alt=""></a>
-    <h3>Hope Cleaning Co.</h3>
-    <p>Let's start a conversation</p>
+    <a href="#home"><img src="./images/footer.png" alt=""></a>
+    <h3 class="foot-color">Hope Cleaning Co.</h3>
+    <p class="foot-color">Let's start a conversation</p>
   </div>
   <div class="contact-bottom">
     <div>
       <span class="material-symbols-outlined icon-style">call</span>
-      <p> +61 426-509-090</p>
+      <p><a class="foot-color" href="tel:0426 509 090">0426 509 090</a></p>
     </div>
     <div>
       <span class="material-symbols-outlined icon-style">mail</span>
@@ -810,14 +800,14 @@
     </div>
   </div>
   <div>
-    <h4>Follow us on.</h4><br>
+    <h4 class="foot-color">Follow us on.</h4><br>
     <p>
-      <a href="https://www.facebook.com/profile.php?id=61562716752062"><i class="fa-brands fa-facebook"></i></a>
-      <a href="https://www.instagram.com/hopecleaningco?igsh=MTY2aTdrbmhrZTk3YQ%3D%3D&amp;utm_source=qr"><i class="fa-brands fa-square-instagram"></i></a>
-      <a href="https://www.tiktok.com/@hope.cleaning.co8?_r=1&_t=ZS-94EcHVZxuhI"><i class="fa-brands fa-tiktok"></i></a>
-      <a href="https://share.google/uNcH9QMP8nZkOrgDI"><i class="fa-brands fa-google"></i></a>
+      <a class="foot-color" href="https://www.facebook.com/profile.php?id=61562716752062"><i class="fa-brands fa-facebook"></i></a>
+      <a class="foot-color" href="https://www.instagram.com/hopecleaningco?igsh=MTY2aTdrbmhrZTk3YQ%3D%3D&amp;utm_source=qr"><i class="fa-brands fa-square-instagram"></i></a>
+      <a class="foot-color" href="https://www.tiktok.com/@hope.cleaning.co8?_r=1&_t=ZS-94EcHVZxuhI"><i class="fa-brands fa-tiktok"></i></a>
+      <a class="foot-color" href="https://share.google/uNcH9QMP8nZkOrgDI"><i class="fa-brands fa-google"></i></a>
     </p><br>
-    <p>© 2026 Hope Cleaning Co. All Rights Reserved.</p>
+    <p class="foot-color">© 2026 Hope Cleaning Co. All Rights Reserved.</p>
   </div>
 </section>
 </body>
