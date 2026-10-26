@@ -422,9 +422,9 @@ margin-bottom: 10px;
 .choose{
   position: relative;
   padding: 80px 30px;
-  background-color: #ebeffb;
+  background-color: ;
   z-index: 1;
-  color: #123b5a;
+  color: Black;
   border: 1px solid black;
 }
 
@@ -436,7 +436,7 @@ margin-bottom: 10px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); 
   gap: 20px;
-  color: #12285A;
+  color: black;
 }
 .choose .choose-cont .five-col, .choose .choose-cont h2{
   margin-top: 40px;
@@ -532,13 +532,14 @@ text-align: justify;
 /*------ Package Page-------------*/
 .pack-sub{
   text-align: center; 
-  background-color: #0F6E75;
-  color: #fff;
+  background-color: ;
+  font-weight: 700;
+  color: black;
 }
 .table{
   position: relative;
   padding: 30px 40px;
-  background-color: #0F6E75;
+  background-color: gray;
 }
 .table .table-cont{
   display: flex;
@@ -557,7 +558,7 @@ text-align: justify;
 
 }
 .tr-bg{
-  background-color: #0F6E75;
+  background-color: black;
 }
 .table .table-cont table th{
   text-align: left;
@@ -572,7 +573,7 @@ text-align: justify;
 }
 .table .table-cont h2{
   font-size: 35px;
-  color: #0F6E75;
+  color: black;
   font-style: inherit;
 }
 .table-card{
@@ -587,7 +588,7 @@ text-align: justify;
 
 .package-cont{
   position: relative;
-  background-color:  #0F6E75;
+  background-color:  ;
   padding: 30px 40px;
   min-height: 70vh;
 }
@@ -615,7 +616,7 @@ text-align: justify;
     }
 
     .package-cont .pricing-container .pack-card h2 {
-      background: #0F6E75;
+      background: black;
       color: #fff;
       margin: 0;
       padding: 15px;
@@ -1001,7 +1002,7 @@ text-align: justify;
 
     .popup-box h2 {
       margin-top: 0;
-      color: #0f8a8a;
+      color: black;
       font-size: 22px;
     }
 
@@ -1012,7 +1013,7 @@ text-align: justify;
     }
 
     .popup-box b {
-      color: #0f8a8a;
+      color: black;
     }
 
     .popup-buttons {
@@ -1207,7 +1208,7 @@ text-align: justify;
       font-weight: 700;
       font-size: 15px;
       transform-origin: right;
-      background: #12285A;
+      background: black;
       color: white;
       padding: 8px 8px;
       cursor: pointer;
