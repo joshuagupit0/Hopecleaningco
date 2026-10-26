@@ -292,7 +292,10 @@ color: black;}
 }
 .about .two-col .about-left:hover{
   filter: grayscale(0%);
+
 }
+
+
 /*.about .two-col .about-left::before{
   content: "";
   position: absolute;
@@ -450,10 +453,10 @@ margin-bottom: 10px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05); 
   transition: transform 0.3s;
 }
-.choose .choose-cont .five-col div:hover{
-  background-color: #19A7AE;
+.choose .choose-cont .five-col div:hover{ background-color: rgb(177, 177, 177);
   transform: translateY(-5px);
 }
+
 .choose .choose-cont .five-col div span{
   display: flex;
   justify-content: center;
@@ -552,7 +555,7 @@ text-align: justify;
 
 .table .table-cont table{
   min-width: 500px;
-  width: 70%;
+  width: 80%;
   border-collapse:collapse;
   overflow:hidden;
 
@@ -1032,19 +1035,20 @@ text-align: justify;
     }
 
     .accept-btn {
-      background: #22b573;
+      background: black;
       color: #fff;
     }
     .accept-btn:hover {
-      background: #1a9a5d;
+      background: rgb(24, 24, 24);
     }
 
     .decline-btn {
       background: #f0f0f0;
-      color: #333;
+      color: black;
     }
     .decline-btn:hover {
       background: black;
+      color: #fff;
     }
 
     /*---------service post-------------*/
@@ -1195,7 +1199,7 @@ text-align: justify;
     }
 
     .sidebar button:hover {
-      background: #00a68c;
+      background: rgb(177, 177, 177);
     }
 
     /* Rotated menubar button that is part of sidebar */
@@ -1222,7 +1226,7 @@ text-align: justify;
     }
 
     .sidebar .quote-btn:hover {
-      background: #00a68c;
+      background: rgb(177, 177, 177);
     }
 
     /* Dropdown + custom input styling */

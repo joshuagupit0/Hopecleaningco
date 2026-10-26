@@ -29,7 +29,7 @@ const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxHuiOH7As4nGhOcNFC
         <p class="comment">"
           ${visibleText}<span class="more-text" style="display:none;">${hiddenText}"</span>
         </p>
-        <span class="view-more-btn review-btn"">
+        <span class="view-more-btn review-btn" style="color: black; cursor: pointer;">
           See More
         </span>
       `;

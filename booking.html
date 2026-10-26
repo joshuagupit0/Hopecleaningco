@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hope Cleaning Co</title>
-  <link rel="icon" type="image/x-icon" href="images/HCClogo.png">
+  <link rel="icon" type="image/x-icon" href="images/Logo-single.png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
   <link rel="stylesheet" href="Style\style.css">
@@ -143,10 +143,10 @@
   display: flex;
   align-content: center;
   justify-content: center;
-  color: #fff;
+  color: black;
   min-height: 40vh; 
   padding: 60px; 
-   background: url('images/book01.png') center/cover no-repeat;
+   /*background: url('images/book01.png') center/cover no-repeat;*/
   align-items: center;
   gap: 20px;
   z-index: 1;
@@ -154,7 +154,9 @@
 .home-booking h1{
   font-size: 45px;
   font-weight: 900;
+  z-index: 2;
 }
+/* 
 .home-booking::before{
   content: "";
   position: absolute;
@@ -166,17 +168,34 @@
   background-size: cover;
   z-index: -1;
   opacity: 0.4;
+}*/
+.home-booking::before{
+  background: url('images/book01.png');
 }
+.home-booking:hover::before{
+  filter: grayscale(0%);
+}
+.home-booking::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background position: center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  filter:grayscale(100%);
+  transition: filter 0.5s ease-in-out;}
+
   </style>
 
 </head>
 
 
- <!--Loading Screen--> 
+<!-- LOADER -->
 <div id="loader">
   <div class="loader-container">
     <div class="side-left"></div>
-    <img src="images\HCClogo.png" alt="Hope Cleaning Co Logo">
+    <img src="images\Logo-single.png" alt="Hope Cleaning Co Logo">
     <div class="buffer-bar">
       <div class="buffer-progress"></div>
     </div>
@@ -195,7 +214,7 @@
   Submitting your request...
 </div>
 <body>
-
+<script src="js/grayscale-animation.js"></script>
 <!-- HEADER -->
 <div class="bus-hour">
   <span class="material-symbols-outlined">business_center</span>
@@ -280,6 +299,7 @@
 
 <!-- HERO SECTION -->
 <section class="hero home-booking" id="home">
+  <div class="diagonal-panel"></div>
   <h1>Book Now</h1>
 </section>
 
@@ -349,8 +369,6 @@
       <img src="images/gallery/gallery4.jpeg" alt="Gallery Image 4">
       <img src="images/gallery/gallery5.jpeg" alt="Gallery Image 5">
       <img src="images/gallery/gallery6.jpeg" alt="Gallery Image 6">
-      <img src="images/gallery/gallery7.jpeg" alt="Gallery Image 7">
-      <img src="images/gallery/gallery8.jpeg" alt="Gallery Image 8">
     </div>
 
     <!-- Navigation Buttons -->

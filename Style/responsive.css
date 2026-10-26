@@ -24,6 +24,22 @@
   }
 }
 @media (max-width: 1110px){
+/*-------Scroll Animation for SmartPhones---------*/
+  .about .two-col .about-left.active, 
+.home-service.active, .home.active, 
+.hero-pack.active, 
+.services .serv-con .card-serv img.active, 
+.home-service.active::before, 
+.home.active::before, 
+.hero-pack.active::before,
+.home-booking.active::before
+{
+  filter: grayscale(0%);
+}
+.choose .choose-cont .five-col div.scroll-active{
+  background-color: rgb(177, 177, 177);
+  transform: translateY(-5px);
+}
   /*-------------Header---------*/
   nav {
     display: none; /* hide nav links */
