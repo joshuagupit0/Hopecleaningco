@@ -47,7 +47,7 @@ form.addEventListener('submit', e => {
   data.set('service', selectedService); // overwrite service with custom if needed
 
   // Send to Google Apps Script
-  fetch('https://script.google.com/macros/s/AKfycbyA4zN31Ix2XA9d2BDLavBRewC4TwTassQVrM1ZknRr4e18w73iFj6EJZjKHi--LpInug/exec', {
+  fetch('https://script.google.com/macros/s/AKfycbynBRE_neNjeDi_-BkICAYIVd69k26aakoDtC2Goo-6m4lSEEeme9-jypI4tPHPlCZAYA/exec', {
     method: 'POST',
     body: data
   })

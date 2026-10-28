@@ -1081,10 +1081,9 @@ text-align: justify;
 }
 .serv-post .two-col .post-cont{
     background-color: #0f6e75;
-    background: linear-gradient(to top, #CFF5F7, #0f6e75);
+    background: linear-gradient(to top, #acacac, #000000);
 
 }
-
 .serv-post .two-col .post-cont div{
     padding-left: 20px;
     display: flex;
@@ -1108,6 +1107,9 @@ text-align: justify;
     width: 100%;
     min-height: 70vh;
 }
+.serv-detail h1{
+  color: white;
+}
 .serv-detail .two-col .post-cont p{
   font-size: 18px;
   font-weight: 400;
@@ -1121,7 +1123,7 @@ text-align: justify;
 }
 .serv-detail h1{
     padding-bottom: 40px;
-    color: #1f4191;
+    color: black ;
 }
 .serv-detail h2{
   font-size: 20px;  
@@ -1136,7 +1138,7 @@ text-align: justify;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to right, #CFF5F7, #0f6e75);
+  background: linear-gradient(to right, #c9c9c9, #000000);
   min-height: 200px;
   padding: 20px;
 }
@@ -1148,12 +1150,13 @@ text-align: justify;
 }
 .book-image .bk-cont{
  min-width: 300px;
-
 }
 .book-image .bk-cont{
   width: 70%;
 }
-
+.book-image .bk-cont div h1, .book-image .bk-cont div h2{
+  color: #efefef;
+}
  /* Sidebar container */
     .sidebar {
       position: fixed;
